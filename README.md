@@ -8,6 +8,7 @@ Two automated short-form video pipelines. Everything except clip picking runs lo
 | `movers/` | **Daily Movers**: the day's biggest stock moves (regular session plus after-hours earnings reactions), found with Robinhood's scanner and rendered by the same engine: `python3 congress/render.py movers/episodes/<date>.json` |
 | `clipper/` | **Clipper**: turns a long video (podcast, interview, stream) into vertical clips with a hook title, captions and a progress bar |
 | `dashboard/` | **AI Shorts Studio**: the source of the hosted dashboard where you watch each video, copy its post text, and track status, views and revenue |
+| `brand/` | **Stock Geek** profile pictures (800×800) and the YouTube banner (2560×1440). Regenerate with `python3 tools/brand_assets.py` |
 | `shortkit/` | Shared parts: local AI voice (Kokoro), transcription with word timings (Parakeet), caption builder, audio mixing |
 
 Sample outputs are in `out/`:
