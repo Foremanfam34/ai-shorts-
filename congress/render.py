@@ -22,7 +22,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from shortkit import FONT_DIR, ROOT, audio, captions  # noqa: E402
+from shortkit import FONT_DIR, ROOT, audio, brand, captions  # noqa: E402
 from shortkit.asr import Transcriber  # noqa: E402
 from shortkit.tts import SAMPLE_RATE, Voice  # noqa: E402
 
@@ -46,6 +46,7 @@ TICKER_COLORS = {"AAPL": (96, 98, 110), "MSFT": (0, 132, 210), "AMZN": (230, 135
 _fonts = {}
 FADE = 1.0  # scene-level opacity, multiplied into every draw call
 CANVAS = None  # the frame being drawn
+BRAND_HDR = BRAND_BADGE = None  # Stock Geek lockup and glasses, pre-rendered once per video
 
 
 def F(weight, size):
@@ -149,20 +150,22 @@ def make_background():
     return img
 
 
-def draw_header(d, ep):
-    f = F("ExtraBold", 32)
+def draw_header(img, d, ep):
+    # row 1: the Stock Geek lockup and the date; row 2: show + format pills; row 3: the source
+    img.paste(BRAND_HDR, (50, 172), BRAND_HDR)
+    d.text((1000, 204), ep["week_label"], font=F("SemiBold", 30), fill=MUTED, anchor="rm")
+    f = F("ExtraBold", 26)
     label = ep["series"]
     tw = f.getlength(label)
-    d.rounded_rectangle((60, 186, 60 + tw + 78, 240), radius=27, fill=RED + (255,))
-    d.ellipse((80, 204, 98, 222), fill=(255, 255, 255, 255))
-    d.text((112, 213), label, font=f, fill=TEXT, anchor="lm")
+    d.rounded_rectangle((60, 250, 60 + tw + 64, 292), radius=21, fill=RED + (255,))
+    d.ellipse((76, 264, 90, 278), fill=(255, 255, 255, 255))
+    d.text((100, 271), label, font=f, fill=TEXT, anchor="lm")
     if ep.get("badge"):
-        x = 60 + tw + 78 + 12
+        x = 60 + tw + 64 + 10
         bw = f.getlength(ep["badge"])
-        d.rounded_rectangle((x, 186, x + bw + 44, 240), radius=27, fill=YELLOW + (255,))
-        d.text((x + 22, 213), ep["badge"], font=f, fill=INK, anchor="lm")
-    d.text((1000, 213), ep["week_label"], font=F("SemiBold", 30), fill=MUTED, anchor="rm")
-    d.text((60, 280), ep["source_line"], font=F("Medium", 26), fill=MUTED, anchor="lm")
+        d.rounded_rectangle((x, 250, x + bw + 36, 292), radius=21, fill=YELLOW + (255,))
+        d.text((x + 18, 271), ep["badge"], font=f, fill=INK, anchor="lm")
+    d.text((60, 326), ep["source_line"], font=F("Medium", 24), fill=MUTED, anchor="lm")
 
 
 # ---------------------------------------------------------------- scenes
@@ -455,9 +458,14 @@ def draw_list(img, d, sc, t, dur):
 def draw_outro(img, d, sc, t, dur):
     for i, note in enumerate(sc["notes"]):
         a = ease_out(prog(t, 0.1 + i * 0.25, 0.4))
-        y = 420 + i * 110
+        y = 400 + i * 100
         d.rounded_rectangle((60, y - 12, 84, y + 12), radius=5, fill=rgba(YELLOW, a))
         text(d, (110, y + 24 * (1 - a)), note, fit(note, "SemiBold", 40, 880), TEXT, a, "lm")
+    ab = ease_out(prog(t, 0.35, 0.5))  # the Stock Geek glasses settle in above the call to action
+    if ab > 0:
+        bw, bh = BRAND_BADGE.size
+        mask = BRAND_BADGE.getchannel("A").point(lambda v: int(v * clamp(ab * FADE)))
+        img.paste(BRAND_BADGE, (W // 2 - bw // 2, int(735 - bh // 2 + 30 * (1 - ab))), mask)
     tc = cue(sc, sc.get("cta_cue"), dur * 0.75)
     pc = prog(t, tc - 0.1, 0.4)
     if pc > 0:
@@ -468,10 +476,12 @@ def draw_outro(img, d, sc, t, dur):
         pulse = 1 + 0.03 * np.sin(max(0, t - tc) * 6)
         f = fit(max(l1, l2, key=len), "Black", 92, 940)
         f = F("Black", f.size * kk * pulse)
-        text(d, (W // 2, 880), l1, f, YELLOW, clamp(pc * 2), "mm")
-        text(d, (W // 2, 990), l2, f, YELLOW, clamp(pc * 2), "mm")
+        text(d, (W // 2, 890), l1, f, YELLOW, clamp(pc * 2), "mm")
+        text(d, (W // 2, 995), l2, f, YELLOW, clamp(pc * 2), "mm")
+        pill(d, W // 2, 1100, "SUBSCRIBE", F("Black", 46 * kk * pulse), RED, TEXT, clamp(pc * 2),
+             padx=40 * kk, pady=20 * kk, radius=30)
     a = ease_out(prog(t, 0.6, 0.5))
-    text(d, (W // 2, 1180), sc["credits"], fit(sc["credits"], "Medium", 28, 940), MUTED, a, "mm")
+    text(d, (W // 2, 1205), sc["credits"], fit(sc["credits"], "Medium", 28, 940), MUTED, a, "mm")
 
 
 DRAW = {"hook": draw_hook, "trades": draw_trades, "bars": draw_bars, "chart": draw_chart,
@@ -609,9 +619,10 @@ def build_audio(ep, total, path):
 
 
 def render_video(ep, total, wav, ass, out_mp4):
-    global FADE, CANVAS
+    global FADE, CANVAS, BRAND_HDR, BRAND_BADGE
     print("[3/4] Rendering frames + burning captions…", flush=True)
     bg = make_background()
+    BRAND_HDR, BRAND_BADGE = brand.lockup(62), brand.badge(300)
     frames = int(np.ceil(total * FPS))
     cmd = ["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
            "-r", str(FPS), "-i", "-", "-i", wav, "-vf", f"ass={ass}:fontsdir={FONT_DIR}", "-c:v", "libx264",
@@ -642,7 +653,7 @@ def render_video(ep, total, wav, ass, out_mp4):
         oy = int(PAN_Y / 2 + PAN_Y * 0.4 * math.sin(2 * math.pi * T / 27 + 1.3))
         img = CANVAS = bg.crop((ox, oy, ox + W, oy + H))
         d = ImageDraw.Draw(img, "RGBA")
-        draw_header(d, ep)
+        draw_header(img, d, ep)
         fade_in = 1.0 if sc is scenes[0] else ease_out(prog(t, 0, 0.18))  # frame 1 must hook
         FADE = min(fade_in, 1.0 if last else clamp((sc["_dur"] - t) / 0.16))
         DRAW[sc["type"]](img, d, sc, t, sc["_dur"])

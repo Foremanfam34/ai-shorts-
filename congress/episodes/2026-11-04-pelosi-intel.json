@@ -620,14 +620,14 @@
     },
     {
       "type": "outro",
-      "say": "So, does she still hold it? We don't actually know. Filings can lag up to forty five days, and this isn't financial advice. Would you have held? Tell me in the comments, and follow for a new one every day.",
+      "say": "So, does she still hold it? We don't actually know. Filings can lag up to forty five days, and this isn't financial advice. Would you have held? Tell me in the comments, and subscribe for a new one every day.",
       "notes": [
         "Positions may have changed since these filings",
         "Disclosures can lag trades by up to 45 days",
         "Not financial advice · Not evidence of wrongdoing"
       ],
-      "cta": "FOLLOW FOR DAILY CONGRESS TRADES",
-      "cta_cue": "Follow",
+      "cta": "SUBSCRIBE FOR DAILY CONGRESS TRADES",
+      "cta_cue": "subscribe",
       "credits": "Trades: Tip Ranks (STOCK Act filings)  ·  Prices: Robinhood"
     }
   ],

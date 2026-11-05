@@ -28,19 +28,19 @@
   "scenes": [
     {
       "type": "hook",
-      "say": "Datadog crushed earnings today... and the stock still fell fourteen percent. On a day the S and P five hundred jumped one point seven percent.",
+      "say": "Datadog crushed earnings on Wednesday... and the stock still fell fourteen percent. On a day the S and P five hundred jumped one point seven percent.",
       "line1": "DATADOG BEAT EARNINGS",
       "big_text": "-14.4%",
       "big_color": "red",
       "line2": "EPS $0.81 VS $0.55 EXPECTED",
-      "pill": "S&P 500 +1.7% TODAY",
+      "pill": "S&P 500 +1.7% THAT DAY",
       "pill_color": "green",
       "pill_cue": "jumped"
     },
     {
       "type": "bars",
-      "say": "The biggest moves today: Fidelity National Information fell twenty four percent, while Medline jumped eighteen and Block rose fifteen, all on earnings.",
-      "title": "BIGGEST MOVES TODAY",
+      "say": "The biggest moves: Fidelity National Information fell twenty four percent, while Medline jumped eighteen and Block rose fifteen, all on earnings.",
+      "title": "BIGGEST MOVES · NOV 4",
       "sub": "Nov 4 vs Nov 3 close  ·  companies worth $15B+",
       "rows": [
         {
@@ -241,7 +241,7 @@
       ],
       "drop": {
         "date": "2026-11-04",
-        "label": "-14.4% TODAY",
+        "label": "-14.4% ON NOV 4",
         "cue": "worse"
       },
       "stat": {
@@ -275,14 +275,14 @@
     },
     {
       "type": "outro",
-      "say": "After hours prices can change by the open, and this isn't financial advice. Which move would you have traded? Follow for the biggest moves, every day.",
+      "say": "After hours prices can change by the open, and this isn't financial advice. Which move would you have traded? Subscribe for the biggest moves, every day.",
       "notes": [
         "After-hours prices can change by the open",
         "One-day moves don't predict the next day",
         "Not financial advice"
       ],
-      "cta": "FOLLOW FOR THE BIGGEST MOVES DAILY",
-      "cta_cue": "Follow",
+      "cta": "SUBSCRIBE FOR DAILY MARKET MOVERS",
+      "cta_cue": "Subscribe",
       "credits": "Prices and earnings: Robinhood  ·  S&P 500 via SPY  ·  Nov 4, 2026"
     }
   ],

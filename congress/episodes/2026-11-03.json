@@ -272,14 +272,14 @@
     },
     {
       "type": "outro",
-      "say": "Quick reminder: filings can lag up to forty five days, and amounts are ranges. This isn't proof of wrongdoing, or financial advice. Which trade surprised you most? Tell me in the comments, and follow for every week's Congress trades.",
+      "say": "Quick reminder: filings can lag up to forty five days, and amounts are ranges. This isn't proof of wrongdoing, or financial advice. Which trade surprised you most? Tell me in the comments, and subscribe for every week's Congress trades.",
       "notes": [
         "Disclosures can lag trades by up to 45 days",
         "Amounts are reported as ranges",
         "Not evidence of wrongdoing · Not financial advice"
       ],
-      "cta": "FOLLOW FOR WEEKLY CONGRESS TRADES",
-      "cta_cue": "Follow",
+      "cta": "SUBSCRIBE FOR WEEKLY CONGRESS TRADES",
+      "cta_cue": "subscribe",
       "credits": "Trades: Tip Ranks (STOCK Act filings)  ·  Prices: Robinhood"
     }
   ],
