@@ -92,6 +92,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 26px; text-transf
 .marks { display: flex; flex-wrap: wrap; gap: 6px; }
 .mark { font-size: 12px; font-weight: 500; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
 .mark.on { background: var(--good-bg); border-color: transparent; color: var(--good); }
+.mark.sched { border-color: var(--accent); color: var(--accent); }
 .state { grid-area: state; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
 @media (min-width: 640px) { .state { flex-direction: column; align-items: flex-end; } }
 .status { appearance: none; border: 0; border-radius: 999px; padding: 6px 30px 6px 12px; font-weight: 600; font-size: 13.5px; cursor: pointer;
@@ -99,6 +100,7 @@ h2 { font-family: var(--display); font-weight: 700; font-size: 26px; text-transf
   background-position: calc(100% - 15px) 52%, calc(100% - 10px) 52%; background-size: 5px 5px; background-repeat: no-repeat; }
 .status.review { background-color: var(--warn-bg); color: var(--warn); }
 .status.ready { background-color: var(--signal); color: var(--signal-ink); }
+.status.scheduled { background-color: var(--accent); color: var(--accent-ink); }
 .status.posted { background-color: var(--good-bg); color: var(--good); }
 .status.skipped { background-color: var(--surface-2); color: var(--muted); }
 .status:disabled { cursor: default; }
@@ -171,7 +173,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 13px; }
 
   <section class="kpis" aria-label="Summary">
     <div class="kpi attn"><span class="label">Needs review</span><span class="v" id="k-review">–</span><small>Check facts and captions before posting</small></div>
-    <div class="kpi"><span class="label">Ready to post</span><span class="v" id="k-ready">–</span><small>Approved, not posted yet</small></div>
+    <div class="kpi"><span class="label">Ready or scheduled</span><span class="v" id="k-ready">–</span><small>Approved or queued, not live yet</small></div>
     <div class="kpi"><span class="label">Posted</span><span class="v" id="k-posted">–</span><small id="k-posted-sub">Videos live somewhere</small></div>
     <div class="kpi"><span class="label">Views</span><span class="v" id="k-views">–</span><small>Across all platforms</small></div>
     <div class="kpi"><span class="label">Revenue</span><span class="v" id="k-rev">–</span><small>From the revenue log</small></div>
@@ -198,7 +200,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 13px; }
         <h2 id="auto-h">Automations</h2>
         <ul class="autos" id="autos"></ul>
         <p class="empty" id="autos-empty">Loading…</p>
-        <p class="hint">To switch one on, ask Claude in your chat. Each run adds its videos to the rundown for you to review.</p>
+        <p class="hint">To switch one on, ask Claude in your chat. Each run adds its videos to the rundown. Once Postiz is connected, Daily Movers also schedules each video on YouTube for 7 pm ET.</p>
       </section>
       <section class="panel" aria-labelledby="rev-h">
         <h2 id="rev-h">Revenue</h2>
@@ -227,7 +229,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 13px; }
 
 <script>
 (() => {
-  const STATUS = [["review", "Needs review"], ["ready", "Ready to post"], ["posted", "Posted"], ["skipped", "Skipped"]];
+  const STATUS = [["review", "Needs review"], ["ready", "Ready to post"], ["scheduled", "Scheduled"], ["posted", "Posted"], ["skipped", "Skipped"]];
   const PLATFORMS = [["youtube", "YouTube"], ["tiktok", "TikTok"], ["instagram", "Instagram"]];
   const SERIES = { movers: "Daily Movers", weekly: "Weekly", spotlight: "Spotlight", clip: "Clip" };
   const AUTO = { off: "Not set up", active: "Running", paused: "Paused" };
@@ -392,8 +394,12 @@ footer { margin-top: 36px; color: var(--muted); font-size: 13px; }
     r.h3.textContent = v.title || "Untitled video";
     r.marks.replaceChildren(...PLATFORMS.map(([k, n]) => {
       const p = (v.platforms || {})[k] || {};
-      const m = el("span", "mark" + (p.posted ? " on" : ""), p.posted ? n + (p.views ? " · " + count(p.views) : "") : n);
-      m.title = p.posted ? "Posted on " + n : "Not on " + n + " yet";
+      let at = !p.posted && p.scheduled_for ? new Date(p.scheduled_for) : null;
+      if (at && isNaN(at)) at = null;
+      const when = at ? at.toLocaleString(undefined, { weekday: "short", hour: "numeric", minute: "2-digit" }) : "";
+      const m = el("span", "mark" + (p.posted ? " on" : at ? " sched" : ""),
+        p.posted ? n + (p.views ? " · " + count(p.views) : "") : at ? n + " · " + when : n);
+      m.title = p.posted ? "Posted on " + n : at ? "Goes live on " + n + " " + at.toLocaleString() : "Not on " + n + " yet";
       return m;
     }));
     if (document.activeElement !== r.sel) r.sel.value = v.status || "review";
@@ -458,7 +464,7 @@ footer { margin-top: 36px; color: var(--muted); font-size: 13px; }
     let views = 0, live = 0;
     for (const v of vids) for (const [k] of PLATFORMS) { const p = (v.platforms || {})[k] || {}; views += p.views || 0; if (p.posted) live++; }
     $("#k-review").textContent = state.loaded ? by("review") : "–";
-    $("#k-ready").textContent = state.loaded ? by("ready") : "–";
+    $("#k-ready").textContent = state.loaded ? by("ready") + by("scheduled") : "–";
     $("#k-posted").textContent = state.loaded ? by("posted") : "–";
     $("#k-posted-sub").textContent = live ? live + " platform post" + (live === 1 ? "" : "s") + " in total" : "Videos live somewhere";
     $("#k-views").textContent = state.loaded ? count(views) : "–";

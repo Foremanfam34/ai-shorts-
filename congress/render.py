@@ -493,6 +493,7 @@ def prepare(ep, workdir):
     scenes = ep["scenes"]
     print(f"[1/4] Voiceover ({ep['voice']}) for {len(scenes)} scenes…", flush=True)
     voice = Voice([s["say"] for s in scenes], say_as=ep.get("say_as"))
+    ep["_qa"] = {"warnings": [], "espeak_words": sorted(voice.oov)}
     if voice.oov:
         print("      words not in the dictionary (pronounced via espeak):", ", ".join(voice.oov))
     tr = Transcriber()
@@ -514,7 +515,9 @@ def prepare(ep, workdir):
             for w in sc["_words"]:
                 if w["start"] > after and norm(w["w"]).startswith(norm(key)):
                     return w["start"]
-            print(f"      ! cue {key!r} not heard in scene {i + 1}; using a default time")
+            msg = f"cue {key!r} not heard in scene {i + 1}"
+            ep["_qa"]["warnings"].append(msg)
+            print(f"      ! {msg}; using a default time")
             return None
 
         cues = {}
@@ -705,7 +708,29 @@ def main():
     post = ep.get("post", {})
     with open(base + "-post.txt", "w", encoding="utf-8") as f:
         f.write(f"{post.get('title', '')}\n\n{post.get('description', '')}\n\n{' '.join(post.get('hashtags', []))}\n")
+    # What the auto-poster (tools/publish.py) checks before it will put this video online.
+    qa = dict(ep.get("_qa", {}), episode=os.path.abspath(args.episode), video=base + ".mp4",
+              duration=round(total, 2), rendered_at=dt.datetime.now().astimezone().isoformat(timespec="seconds"),
+              **probe(base + ".mp4"))
+    with open(base + "-qa.json", "w") as f:
+        json.dump(qa, f, indent=1)
+    if qa["warnings"]:
+        print("QA warnings (the auto-poster will refuse this video until they're fixed):")
+        for w in qa["warnings"]:
+            print("   -", w)
     print(f"Done: {base}.mp4  ({total:.1f}s)")
+
+
+def probe(path):
+    """Frame size, streams and length of the finished file."""
+    out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=codec_type,width,height",
+                          "-show_entries", "format=duration", "-of", "json", path],
+                         capture_output=True, text=True, check=True).stdout
+    info = json.loads(out)
+    vid = next((s for s in info["streams"] if s["codec_type"] == "video"), {})
+    return {"width": vid.get("width"), "height": vid.get("height"),
+            "has_audio": any(s["codec_type"] == "audio" for s in info["streams"]),
+            "file_duration": round(float(info["format"]["duration"]), 2)}
 
 
 if __name__ == "__main__":

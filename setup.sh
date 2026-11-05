@@ -21,6 +21,11 @@ if [ ! -f fonts/Inter-Black.otf ] && [ ! -f /usr/share/fonts/opentype/inter/Inte
   unzip -j -o -q /tmp/inter.zip 'extras/otf/Inter-*.otf' -d fonts && rm /tmp/inter.zip
 fi
 
+# Postiz CLI for tools/publish.py (auto-posting to YouTube). It does nothing until POSTIZ_API_KEY is set.
+if ! command -v postiz >/dev/null && command -v npm >/dev/null; then
+  npm install -g postiz@2 >/dev/null 2>&1 || echo "Couldn't install the postiz CLI; auto-posting stays off."
+fi
+
 mkdir -p models && cd models
 base=https://github.com/k2-fsa/sherpa-onnx/releases/download
 [ -d kokoro-multi-lang-v1_0 ] || curl -fsSL "$base/tts-models/kokoro-multi-lang-v1_0.tar.bz2" | tar xj

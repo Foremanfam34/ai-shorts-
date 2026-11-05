@@ -111,7 +111,30 @@ Each of these needs its API host allowed in this environment's network settings,
 
 ## Posting
 
-Upload by hand for the first 2–3 weeks (YouTube Studio, TikTok, Instagram) to learn which hooks work. Then automate the upload step, for example with Postiz, which schedules posts to all three platforms.
+**Daily Movers posts itself to YouTube once Postiz is connected.** Each weekday run:
+1. Checks every number against official closes.
+2. Renders the video and checks its frames, captions and QA report (`out/<slug>-qa.json`).
+3. Schedules the Short on YouTube for 7:00 pm ET with `tools/publish.py`.
+4. Messages you. Reply **hold** before 7 pm to stop it.
+
+If any check fails, the video isn't posted and waits in the dashboard instead. Each scheduled post is logged in `publish/log.jsonl`. Nothing is ever posted to TikTok or Instagram automatically.
+
+**Connecting it (one time):**
+1. Start a Postiz trial at https://postiz.com and connect your YouTube channel: Add Channel, then YouTube.
+2. Copy your API key from Postiz: Settings, then Developers, then Public API.
+3. Open this Claude environment's settings:
+   - Add the key as `POSTIZ_API_KEY`.
+   - Add `api.postiz.com` under Network access, then Allowed domains.
+4. Run `python3 tools/publish.py check`. It should print your channel's name.
+
+Why Postiz instead of YouTube's own API, which is free? YouTube locks every video uploaded through an unapproved app as private until Google audits that app. Postiz's app is already approved, so its posts go public.
+
+**Congress videos** name real people, so they still need your approval. Once you approve one, schedule it with `python3 tools/publish.py youtube congress/episodes/<file>.json --at 12:00`, or ask Claude to.
+
+**Commands:**
+- `publish.py status --views` lists recent posts with their links and views.
+- `publish.py hold <id>` stops a scheduled post.
+- `publish.py release <id>` puts a stopped post back on its schedule.
 
 ## Known limits
 

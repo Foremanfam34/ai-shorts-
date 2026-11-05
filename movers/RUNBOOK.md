@@ -1,10 +1,19 @@
 # Daily Movers runbook
 
-Each weekday after the close, make one Stock Geek "Daily Movers" Short and leave it in the dashboard for review. **Never post anything.** The owner reviews and posts.
+Each weekday after the close, make one Stock Geek "Daily Movers" Short and check it.
+- **If Postiz is connected and every check passes:** schedule it on YouTube for 7:00 pm ET (step 7). The owner can stop it until then.
+- **Otherwise:** leave it in the dashboard for the owner to post.
+
+**Never post anywhere except YouTube. Never post a video that failed a check.**
 
 ## 0. Setup
 - Work in `/home/user/ai-shorts-` (the `Foremanfam34/ai-shorts-` repo) and run `git pull`.
-- If `models/` is missing, run `./setup.sh`, which downloads about 1.5 GB of voice and transcription models.
+- If `models/` is missing, run `./setup.sh`. It downloads about 1.5 GB of voice and transcription models and installs the `postiz` CLI.
+- **Catch up on earlier posts.** If `POSTIZ_API_KEY` is set, run `python3 tools/publish.py status --days 7 --views`. For each post that has a `url`, update its dashboard row (match on the title):
+  - `platforms.youtube`: set `posted: true`, `url`, `views`
+  - set `status: "posted"`
+
+  Any post with an `error`: tell the owner in one line.
 
 ## 1. Is there a session to cover?
 - Get SPY from `get_equity_quotes`. If `close.date` is not today (US/Eastern), the market was closed (a holiday or weekend). Stop and send one line saying so.
@@ -44,7 +53,8 @@ Each weekday after the close, make one Stock Geek "Daily Movers" Short and leave
 - Run `python3 congress/render.py movers/episodes/YYYY-MM-DD.json`. It takes about 2 minutes.
 - Read the "heard:" lines. Fix any name the voice misreads with `say_as`, and any caption wording with `caption_fix`.
 - Fix any "cue not heard" warning by choosing a non-number cue word.
-- Pull four or five frames with ffmpeg and look at them: the hook, bars, chart, list and outro.
+- The render writes `out/market-movers-YYYY-MM-DD-qa.json`. The auto-poster refuses any video whose report lists warnings, so fix them and re-render.
+- Pull four or five frames with ffmpeg and look at them: the hook, bars, chart, list and outro. Check that nothing overlaps, every number matches your verified data, and the captions are spelled right.
 
 ## 6. Dashboard
 The dashboard is https://claude.ai/artifact/PkXcf4fxhp49R6wgKxe8mH.
@@ -56,6 +66,32 @@ The dashboard is https://claude.ai/artifact/PkXcf4fxhp49R6wgKxe8mH.
   - `platforms`: `youtube`, `tiktok` and `instagram`, each `{posted: false, url: "", views: 0}`
 - Update `automations/daily-movers` with `last_run` (today) and `status: "active"`. Re-read each document first and pin `if_version`.
 
-## 7. Save and report
-- Commit the episode JSON, using the commit attribution lines, and push to `main`.
-- Send the MP4 to the owner with a one-line summary of the story and "ready for review in the dashboard".
+## 7. Publish to YouTube (only when every check passed)
+**Go/no-go:** go only if all of these passed:
+- the number re-check in step 4
+- the frame check in step 5
+- no QA warnings
+
+If any failed and you can't fix it in this run, don't publish. Leave the row at `review` and tell the owner what's wrong.
+
+Run `python3 tools/publish.py youtube movers/episodes/YYYY-MM-DD.json --at 19:00`. It runs its own checks (QA report, 1080×1920 with sound, video newer than the episode file, title length, not already scheduled), then uploads and schedules the post.
+
+What to do with the result:
+- **`SCHEDULED` (exit 0):**
+  - Set the row to `status: "scheduled"`.
+  - Set `platforms.youtube` to `{posted: false, scheduled_for: <goes_live_utc>, postiz_id: <postiz_id>, url: "", views: 0}`.
+  - Run `python3 tools/publish.py status --days 1` and confirm the post is listed with the right time. If it isn't, run `hold` on it and tell the owner.
+- **`NOT CONNECTED` (exit 2):** Postiz isn't connected in this session. Leave the row at `review` for the owner to post.
+- **`NOT POSTED` (exit 5):** a check failed. Fix and re-render if you can (then run it again). Otherwise leave the row at `review` and pass the reasons on.
+- **`ERROR` (exit 1):** leave the row at `review` and pass the error on. Don't retry more than once.
+
+**Stopping a post:** if the owner replies "hold", "stop" or similar before it goes live, run `python3 tools/publish.py hold <postiz_id>` and set the row back to `review`. If they then say "post it", run `release <postiz_id>`.
+
+**TikTok and Instagram:** never post there, even though Postiz could.
+
+## 8. Save and report
+- Commit the episode JSON and `publish/log.jsonl` (if it changed), using the commit attribution lines, and push to `main`.
+- Send the owner the MP4 with a one-line summary of the story, then one of:
+  - "Goes live on YouTube at 7:00 PM ET. Reply **hold** to stop it."
+  - "Ready for you to post. It's in the dashboard." Add the reason it wasn't auto-posted.
+- **Fridays:** compare views on the week's posts (`status --days 7 --views`). In `movers/LEARNINGS.md`, add three lines: which hook style did best, which did worst, and what to try next week. Read that file before you write each hook.
