@@ -1,0 +1,638 @@
+{
+  "id": "2026-11-04-pelosi-intel",
+  "format": "spotlight",
+  "series": "CONGRESS TRADES",
+  "badge": "SPOTLIGHT",
+  "week_label": "Nov 4, 2026",
+  "source_line": "Source: STOCK Act disclosures via Tip Ranks",
+  "voice": "am_michael",
+  "speed": 1.1,
+  "say_as": {},
+  "post": {
+    "title": "Pelosi's Intel buys vs. Intel's 29% one-day crash",
+    "description": "Rep. Nancy Pelosi's STOCK Act filings show six Intel (INTC) buys: options on May 28 and 29 ($1M–$5M each), then shares and options on Jul 23 and 24, worth $3.5M–$13M in total (disclosed Jun 24 and Aug 24). On Oct 30 Intel fell 28.6% in one day, and its Nov 3 close of $60.55 is 49.9% below its May 28 close. Positions may have changed since these filings, and amounts are disclosed ranges. Source: STOCK Act filings via Tip Ranks; prices via Robinhood. Not financial advice and not an allegation of wrongdoing.",
+    "hashtags": [
+      "#congresstrades",
+      "#pelosi",
+      "#intel",
+      "#stocks",
+      "#stockmarket",
+      "#investing"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "say": "Nancy Pelosi's filings show up to thirteen million dollars of Intel buys... and then Intel fell twenty nine percent. In one day.",
+      "line1": "PELOSI'S FILINGS SHOW",
+      "big_text": "$3.5M–$13M",
+      "line2": "OF INTEL BUYS",
+      "pill": "THEN -29% IN ONE DAY",
+      "pill_cue": "fell"
+    },
+    {
+      "type": "trades",
+      "say": "Her filings list options in late May, then shares and more options in July.",
+      "who": "REP. NANCY PELOSI (D)",
+      "sub": "6 buys  ·  Disclosed Jun 24 and Aug 24",
+      "rows": [
+        {
+          "ticker": "INTC",
+          "name": "May 28 · Options",
+          "side": "BUY",
+          "range": "$1M–$5M"
+        },
+        {
+          "ticker": "INTC",
+          "name": "May 29 · Options",
+          "side": "BUY",
+          "range": "$1M–$5M"
+        },
+        {
+          "ticker": "INTC",
+          "name": "Jul 23 · Shares",
+          "side": "BUY",
+          "range": "$500K–$1M"
+        },
+        {
+          "ticker": "INTC",
+          "name": "Jul 23 · Options",
+          "side": "BUY",
+          "range": "$250K–$500K"
+        },
+        {
+          "ticker": "INTC",
+          "name": "Jul 24 · Shares",
+          "side": "BUY",
+          "range": "$500K–$1M"
+        },
+        {
+          "ticker": "INTC",
+          "name": "Jul 24 · Options",
+          "side": "BUY",
+          "range": "$250K–$500K"
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "say": "Now look at Intel since then. It swung up and down for months... then on October thirtieth, it crashed. It's now down about half from those May buys.",
+      "who": "INTEL (INTC)",
+      "sub": "Daily close, May 1 → Nov 3",
+      "series": [
+        [
+          "2026-05-01",
+          99.62
+        ],
+        [
+          "2026-05-04",
+          95.78
+        ],
+        [
+          "2026-05-05",
+          108.15
+        ],
+        [
+          "2026-05-06",
+          113.01
+        ],
+        [
+          "2026-05-07",
+          109.62
+        ],
+        [
+          "2026-05-08",
+          124.92
+        ],
+        [
+          "2026-05-11",
+          129.44
+        ],
+        [
+          "2026-05-12",
+          120.61
+        ],
+        [
+          "2026-05-13",
+          120.29
+        ],
+        [
+          "2026-05-14",
+          115.93
+        ],
+        [
+          "2026-05-15",
+          108.77
+        ],
+        [
+          "2026-05-18",
+          108.17
+        ],
+        [
+          "2026-05-19",
+          110.8
+        ],
+        [
+          "2026-05-20",
+          118.96
+        ],
+        [
+          "2026-05-21",
+          118.5
+        ],
+        [
+          "2026-05-22",
+          119.84
+        ],
+        [
+          "2026-05-26",
+          123.52
+        ],
+        [
+          "2026-05-27",
+          121.77
+        ],
+        [
+          "2026-05-28",
+          120.89
+        ],
+        [
+          "2026-05-29",
+          114.68
+        ],
+        [
+          "2026-06-01",
+          109.33
+        ],
+        [
+          "2026-06-02",
+          107.93
+        ],
+        [
+          "2026-06-03",
+          112.71
+        ],
+        [
+          "2026-06-04",
+          111.78
+        ],
+        [
+          "2026-06-05",
+          99.17
+        ],
+        [
+          "2026-06-08",
+          110.27
+        ],
+        [
+          "2026-06-09",
+          107.92
+        ],
+        [
+          "2026-06-10",
+          107.04
+        ],
+        [
+          "2026-06-11",
+          116.96
+        ],
+        [
+          "2026-06-12",
+          124.57
+        ],
+        [
+          "2026-06-15",
+          127.86
+        ],
+        [
+          "2026-06-16",
+          117.05
+        ],
+        [
+          "2026-06-17",
+          121.1
+        ],
+        [
+          "2026-06-18",
+          133.99
+        ],
+        [
+          "2026-06-22",
+          140.94
+        ],
+        [
+          "2026-06-23",
+          132.28
+        ],
+        [
+          "2026-06-24",
+          131.65
+        ],
+        [
+          "2026-06-25",
+          132.87
+        ],
+        [
+          "2026-06-26",
+          128.32
+        ],
+        [
+          "2026-06-29",
+          131.72
+        ],
+        [
+          "2026-06-30",
+          139.63
+        ],
+        [
+          "2026-07-01",
+          127.02
+        ],
+        [
+          "2026-07-02",
+          120.35
+        ],
+        [
+          "2026-07-06",
+          122.2
+        ],
+        [
+          "2026-07-07",
+          110.39
+        ],
+        [
+          "2026-07-08",
+          110.24
+        ],
+        [
+          "2026-07-09",
+          112.54
+        ],
+        [
+          "2026-07-10",
+          109.84
+        ],
+        [
+          "2026-07-13",
+          103.12
+        ],
+        [
+          "2026-07-14",
+          107.76
+        ],
+        [
+          "2026-07-15",
+          102.99
+        ],
+        [
+          "2026-07-16",
+          96.98
+        ],
+        [
+          "2026-07-17",
+          95.04
+        ],
+        [
+          "2026-07-20",
+          97.06
+        ],
+        [
+          "2026-07-21",
+          105.45
+        ],
+        [
+          "2026-07-22",
+          102.62
+        ],
+        [
+          "2026-07-23",
+          100.23
+        ],
+        [
+          "2026-07-24",
+          92.32
+        ],
+        [
+          "2026-07-27",
+          91.67
+        ],
+        [
+          "2026-07-28",
+          86.3
+        ],
+        [
+          "2026-07-29",
+          81.88
+        ],
+        [
+          "2026-07-30",
+          91.13
+        ],
+        [
+          "2026-07-31",
+          90.2
+        ],
+        [
+          "2026-08-03",
+          91.0
+        ],
+        [
+          "2026-08-04",
+          100.86
+        ],
+        [
+          "2026-08-05",
+          101.06
+        ],
+        [
+          "2026-08-06",
+          99.81
+        ],
+        [
+          "2026-08-07",
+          101.65
+        ],
+        [
+          "2026-08-10",
+          97.52
+        ],
+        [
+          "2026-08-11",
+          97.71
+        ],
+        [
+          "2026-08-12",
+          100.95
+        ],
+        [
+          "2026-08-13",
+          104.56
+        ],
+        [
+          "2026-08-14",
+          102.5
+        ],
+        [
+          "2026-08-17",
+          103.49
+        ],
+        [
+          "2026-08-18",
+          96.69
+        ],
+        [
+          "2026-08-19",
+          92.8
+        ],
+        [
+          "2026-08-20",
+          92.13
+        ],
+        [
+          "2026-08-21",
+          90.07
+        ],
+        [
+          "2026-08-24",
+          87.26
+        ],
+        [
+          "2026-08-25",
+          87.48
+        ],
+        [
+          "2026-08-26",
+          88.24
+        ],
+        [
+          "2026-08-27",
+          92.09
+        ],
+        [
+          "2026-08-28",
+          89.47
+        ],
+        [
+          "2026-08-31",
+          89.51
+        ],
+        [
+          "2026-09-01",
+          88.97
+        ],
+        [
+          "2026-09-02",
+          90.05
+        ],
+        [
+          "2026-09-03",
+          91.67
+        ],
+        [
+          "2026-09-04",
+          95.8
+        ],
+        [
+          "2026-09-08",
+          104.47
+        ],
+        [
+          "2026-09-09",
+          106.24
+        ],
+        [
+          "2026-09-10",
+          100.32
+        ],
+        [
+          "2026-09-11",
+          102.94
+        ],
+        [
+          "2026-09-14",
+          97.19
+        ],
+        [
+          "2026-09-15",
+          97.14
+        ],
+        [
+          "2026-09-16",
+          101.05
+        ],
+        [
+          "2026-09-17",
+          108.8
+        ],
+        [
+          "2026-09-18",
+          108.6
+        ],
+        [
+          "2026-09-21",
+          121.78
+        ],
+        [
+          "2026-09-22",
+          123.86
+        ],
+        [
+          "2026-09-23",
+          122.6
+        ],
+        [
+          "2026-09-24",
+          127.39
+        ],
+        [
+          "2026-09-25",
+          123.0
+        ],
+        [
+          "2026-09-28",
+          116.03
+        ],
+        [
+          "2026-09-29",
+          115.93
+        ],
+        [
+          "2026-09-30",
+          120.23
+        ],
+        [
+          "2026-10-01",
+          120.0
+        ],
+        [
+          "2026-10-02",
+          119.33
+        ],
+        [
+          "2026-10-05",
+          116.19
+        ],
+        [
+          "2026-10-06",
+          112.5
+        ],
+        [
+          "2026-10-07",
+          113.12
+        ],
+        [
+          "2026-10-08",
+          107.08
+        ],
+        [
+          "2026-10-09",
+          104.7
+        ],
+        [
+          "2026-10-12",
+          101.35
+        ],
+        [
+          "2026-10-13",
+          102.81
+        ],
+        [
+          "2026-10-14",
+          98.12
+        ],
+        [
+          "2026-10-15",
+          95.37
+        ],
+        [
+          "2026-10-16",
+          89.85
+        ],
+        [
+          "2026-10-19",
+          92.03
+        ],
+        [
+          "2026-10-20",
+          91.69
+        ],
+        [
+          "2026-10-21",
+          92.96
+        ],
+        [
+          "2026-10-22",
+          85.49
+        ],
+        [
+          "2026-10-23",
+          86.96
+        ],
+        [
+          "2026-10-26",
+          90.47
+        ],
+        [
+          "2026-10-27",
+          93.74
+        ],
+        [
+          "2026-10-28",
+          95.53
+        ],
+        [
+          "2026-10-29",
+          92.07
+        ],
+        [
+          "2026-10-30",
+          65.76
+        ],
+        [
+          "2026-11-02",
+          59.97
+        ],
+        [
+          "2026-11-03",
+          60.55
+        ]
+      ],
+      "markers": [
+        {
+          "date": "2026-05-28",
+          "label": "MAY BUYS"
+        },
+        {
+          "date": "2026-07-23",
+          "label": "JULY BUYS"
+        }
+      ],
+      "drop": {
+        "date": "2026-10-30",
+        "label": "-28.6% IN ONE DAY",
+        "cue": "crashed"
+      },
+      "stat": {
+        "value": "-49.9%",
+        "label": "since the May 28 buys",
+        "cue": "half"
+      }
+    },
+    {
+      "type": "outro",
+      "say": "So, does she still hold it? We don't actually know. Filings can lag up to forty five days, and this isn't financial advice. Would you have held? Tell me in the comments, and follow for a new one every day.",
+      "notes": [
+        "Positions may have changed since these filings",
+        "Disclosures can lag trades by up to 45 days",
+        "Not financial advice · Not evidence of wrongdoing"
+      ],
+      "cta": "FOLLOW FOR DAILY CONGRESS TRADES",
+      "cta_cue": "Follow",
+      "credits": "Trades: Tip Ranks (STOCK Act filings)  ·  Prices: Robinhood"
+    }
+  ],
+  "natural": true,
+  "voice_fx": true,
+  "music": "groove",
+  "pause_scale": 0.8
+}

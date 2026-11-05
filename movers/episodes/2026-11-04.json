@@ -1,0 +1,299 @@
+{
+  "id": "movers-2026-11-04",
+  "slug": "market-movers-2026-11-04",
+  "format": "movers",
+  "series": "MARKET MOVERS",
+  "badge": "DAILY",
+  "week_label": "Nov 4, 2026",
+  "source_line": "Data: Robinhood (prices and earnings)",
+  "voice": "am_michael",
+  "speed": 1.1,
+  "pause_scale": 0.8,
+  "natural": true,
+  "voice_fx": true,
+  "music": "groove",
+  "say_as": {},
+  "post": {
+    "title": "Datadog beat earnings… and still fell 14% 📉",
+    "description": "Biggest moves Nov 4: Datadog −14.4% despite EPS of $0.81 vs $0.55 expected (now −32% in five sessions), FIS −23.7%, Medline +18.4%, Block +15.3%, Moderna +13.1%, Vertiv −12.9%. After hours: AppLovin +20.7% and Qualcomm −9.4% on earnings. S&P 500 (SPY) +1.7%. After-hours prices can change by the open. Data: Robinhood. Not financial advice.",
+    "hashtags": [
+      "#stockmarket",
+      "#stocks",
+      "#earnings",
+      "#investing",
+      "#datadog",
+      "#trading"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "say": "Datadog crushed earnings today... and the stock still fell fourteen percent. On a day the S and P five hundred jumped one point seven percent.",
+      "line1": "DATADOG BEAT EARNINGS",
+      "big_text": "-14.4%",
+      "big_color": "red",
+      "line2": "EPS $0.81 VS $0.55 EXPECTED",
+      "pill": "S&P 500 +1.7% TODAY",
+      "pill_color": "green",
+      "pill_cue": "jumped"
+    },
+    {
+      "type": "bars",
+      "say": "The biggest moves today: Fidelity National Information fell twenty four percent, while Medline jumped eighteen and Block rose fifteen, all on earnings.",
+      "title": "BIGGEST MOVES TODAY",
+      "sub": "Nov 4 vs Nov 3 close  ·  companies worth $15B+",
+      "rows": [
+        {
+          "ticker": "FIS",
+          "from": 38.99,
+          "to": 29.76,
+          "cue": "Fidelity"
+        },
+        {
+          "ticker": "MDLN",
+          "from": 34.09,
+          "to": 40.35,
+          "cue": "Medline"
+        },
+        {
+          "ticker": "XYZ",
+          "from": 76.0,
+          "to": 87.63,
+          "cue": "Block"
+        },
+        {
+          "ticker": "MRNA",
+          "from": 228.44,
+          "to": 258.38
+        },
+        {
+          "ticker": "VRT",
+          "from": 235.97,
+          "to": 205.55
+        },
+        {
+          "ticker": "DDOG",
+          "from": 220.52,
+          "to": 188.72
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "say": "Zoom out, and it's even worse... Datadog is down thirty two percent in just five trading days.",
+      "who": "DATADOG (DDOG)",
+      "sub": "Daily close, Sep 15 → Nov 4",
+      "series": [
+        [
+          "2026-09-15",
+          230.27
+        ],
+        [
+          "2026-09-16",
+          230.79
+        ],
+        [
+          "2026-09-17",
+          236.0
+        ],
+        [
+          "2026-09-18",
+          229.92
+        ],
+        [
+          "2026-09-21",
+          245.05
+        ],
+        [
+          "2026-09-22",
+          247.48
+        ],
+        [
+          "2026-09-23",
+          251.49
+        ],
+        [
+          "2026-09-24",
+          256.92
+        ],
+        [
+          "2026-09-25",
+          268.13
+        ],
+        [
+          "2026-09-28",
+          268.7
+        ],
+        [
+          "2026-09-29",
+          268.56
+        ],
+        [
+          "2026-09-30",
+          273.85
+        ],
+        [
+          "2026-10-01",
+          276.46
+        ],
+        [
+          "2026-10-02",
+          277.22
+        ],
+        [
+          "2026-10-05",
+          276.42
+        ],
+        [
+          "2026-10-06",
+          278.24
+        ],
+        [
+          "2026-10-07",
+          271.34
+        ],
+        [
+          "2026-10-08",
+          273.8
+        ],
+        [
+          "2026-10-09",
+          293.26
+        ],
+        [
+          "2026-10-12",
+          287.29
+        ],
+        [
+          "2026-10-13",
+          283.34
+        ],
+        [
+          "2026-10-14",
+          269.33
+        ],
+        [
+          "2026-10-15",
+          266.25
+        ],
+        [
+          "2026-10-16",
+          247.11
+        ],
+        [
+          "2026-10-19",
+          260.36
+        ],
+        [
+          "2026-10-20",
+          256.43
+        ],
+        [
+          "2026-10-21",
+          273.09
+        ],
+        [
+          "2026-10-22",
+          257.75
+        ],
+        [
+          "2026-10-23",
+          269.65
+        ],
+        [
+          "2026-10-26",
+          280.24
+        ],
+        [
+          "2026-10-27",
+          280.82
+        ],
+        [
+          "2026-10-28",
+          278.41
+        ],
+        [
+          "2026-10-29",
+          265.84
+        ],
+        [
+          "2026-10-30",
+          235.27
+        ],
+        [
+          "2026-11-02",
+          216.1
+        ],
+        [
+          "2026-11-03",
+          220.52
+        ],
+        [
+          "2026-11-04",
+          188.72
+        ]
+      ],
+      "markers": [
+        {
+          "date": "2026-10-28",
+          "label": "5 DAYS AGO"
+        }
+      ],
+      "drop": {
+        "date": "2026-11-04",
+        "label": "-14.4% TODAY",
+        "cue": "worse"
+      },
+      "stat": {
+        "value": "-32.2%",
+        "label": "in five trading days",
+        "cue": "down"
+      }
+    },
+    {
+      "type": "list",
+      "say": "After the bell, AppLovin jumped twenty one percent on its earnings. Qualcomm beat too... and dropped more than nine percent.",
+      "title": "AFTER THE BELL",
+      "rows": [
+        {
+          "who": "AppLovin",
+          "ticker": "APP",
+          "side": "UP",
+          "range": "+20.7%",
+          "dates": "After hours · EPS $4.30 vs $4.01 expected",
+          "cue": "AppLovin"
+        },
+        {
+          "who": "Qualcomm",
+          "ticker": "QCOM",
+          "side": "DOWN",
+          "range": "−9.4%",
+          "dates": "After hours · EPS $2.17 vs $2.02 expected",
+          "cue": "Qualcomm"
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "say": "After hours prices can change by the open, and this isn't financial advice. Which move would you have traded? Follow for the biggest moves, every day.",
+      "notes": [
+        "After-hours prices can change by the open",
+        "One-day moves don't predict the next day",
+        "Not financial advice"
+      ],
+      "cta": "FOLLOW FOR THE BIGGEST MOVES DAILY",
+      "cta_cue": "Follow",
+      "credits": "Prices and earnings: Robinhood  ·  S&P 500 via SPY  ·  Nov 4, 2026"
+    }
+  ],
+  "caption_fix": [
+    [
+      "S and P500",
+      "S&P 500"
+    ],
+    [
+      "S and P 500",
+      "S&P 500"
+    ]
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "id": "2026-11-03",
+  "series": "CONGRESS TRADES",
+  "week_label": "Week of Nov 3, 2026",
+  "source_line": "Source: STOCK Act disclosures via Tip Ranks",
+  "voice": "am_michael",
+  "speed": 1.1,
+  "say_as": {
+    "Rulli": "Roo lee"
+  },
+  "post": {
+    "title": "Congressman sold up to $1.6M of Big Tech in ONE day 👀",
+    "description": "Rep. Pete Sessions disclosed 6 Big Tech sales dated Oct 2 (Apple, Microsoft, Amazon, Alphabet, Nvidia, Tesla). Rep. Michael Rulli disclosed selling Alphabet on Oct 16. Amounts are disclosed ranges; disclosures can lag trades by up to 45 days. Source: STOCK Act filings via Tip Ranks; prices via Robinhood (Oct 2 close → Nov 2 close). Not financial advice and not an allegation of wrongdoing.",
+    "hashtags": [
+      "#congresstrades",
+      "#stocks",
+      "#investing",
+      "#stockmarket",
+      "#nvidia",
+      "#google"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "say": "This congressman sold up to one point six million dollars of Big Tech stock... in a single day.",
+      "line1": "THIS CONGRESSMAN SOLD",
+      "big": {
+        "lo": 730,
+        "hi": 1600
+      },
+      "line2": "OF BIG TECH STOCK",
+      "pill": "IN ONE DAY",
+      "pill_cue": "single"
+    },
+    {
+      "type": "trades",
+      "say": "Representative Pete Sessions disclosed six sales, all on October second: Apple, Microsoft, Amazon, Alphabet, Nvidia, and Tesla.",
+      "who": "REP. PETE SESSIONS (R)",
+      "sub": "Traded Oct 2  ·  Disclosed Oct 28",
+      "rows": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple",
+          "side": "SELL",
+          "range": "$250K–$500K",
+          "cue": "Apple"
+        },
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft",
+          "side": "SELL",
+          "range": "$250K–$500K",
+          "cue": "Microsoft"
+        },
+        {
+          "ticker": "AMZN",
+          "name": "Amazon",
+          "side": "SELL",
+          "range": "$100K–$250K",
+          "cue": "Amazon"
+        },
+        {
+          "ticker": "GOOGL",
+          "name": "Alphabet",
+          "side": "SELL",
+          "range": "$100K–$250K",
+          "cue": "Alphabet"
+        },
+        {
+          "ticker": "NVDA",
+          "name": "Nvidia",
+          "side": "SELL",
+          "range": "$15K–$50K",
+          "cue": "Nvidia"
+        },
+        {
+          "ticker": "TSLA",
+          "name": "Tesla",
+          "side": "SELL",
+          "range": "$15K–$50K",
+          "cue": "Tesla"
+        }
+      ]
+    },
+    {
+      "type": "bars",
+      "say": "So how did those stocks do after? Alphabet is down nearly nineteen percent. Nvidia, almost fourteen. And Tesla? Up nine.",
+      "title": "SINCE THOSE SALES",
+      "sub": "Share price, Oct 2 close → Nov 2 close",
+      "from": "2026-10-02",
+      "to": "2026-11-02",
+      "rows": [
+        {
+          "ticker": "AAPL",
+          "from": 333.69,
+          "to": 338.32
+        },
+        {
+          "ticker": "MSFT",
+          "from": 517.53,
+          "to": 507.12
+        },
+        {
+          "ticker": "AMZN",
+          "from": 251.52,
+          "to": 245.63
+        },
+        {
+          "ticker": "GOOGL",
+          "from": 343.5,
+          "to": 278.99,
+          "cue": "Alphabet"
+        },
+        {
+          "ticker": "NVDA",
+          "from": 233.95,
+          "to": 202.06,
+          "cue": "Nvidia"
+        },
+        {
+          "ticker": "TSLA",
+          "from": 370.59,
+          "to": 403.82,
+          "cue": "Tesla"
+        }
+      ]
+    },
+    {
+      "type": "chart",
+      "say": "And he wasn't the only one. Representative Michael Rulli sold up to three hundred thousand dollars of Alphabet on October sixteenth. Thirteen days later... the stock fell almost thirteen percent in one day.",
+      "who": "REP. MICHAEL RULLI (R)",
+      "sub": "Sold $150K–$300K of Alphabet  ·  Oct 16",
+      "ticker": "GOOGL",
+      "series": [
+        [
+          "2026-10-01",
+          338.24
+        ],
+        [
+          "2026-10-02",
+          343.5
+        ],
+        [
+          "2026-10-05",
+          346.47
+        ],
+        [
+          "2026-10-06",
+          347.68
+        ],
+        [
+          "2026-10-07",
+          350.5
+        ],
+        [
+          "2026-10-08",
+          348.29
+        ],
+        [
+          "2026-10-09",
+          351.66
+        ],
+        [
+          "2026-10-12",
+          352.72
+        ],
+        [
+          "2026-10-13",
+          353.78
+        ],
+        [
+          "2026-10-14",
+          347.64
+        ],
+        [
+          "2026-10-15",
+          349.22
+        ],
+        [
+          "2026-10-16",
+          340.59
+        ],
+        [
+          "2026-10-19",
+          344.18
+        ],
+        [
+          "2026-10-20",
+          340.28
+        ],
+        [
+          "2026-10-21",
+          334.76
+        ],
+        [
+          "2026-10-22",
+          324.22
+        ],
+        [
+          "2026-10-23",
+          320.21
+        ],
+        [
+          "2026-10-26",
+          316.8
+        ],
+        [
+          "2026-10-27",
+          320.58
+        ],
+        [
+          "2026-10-28",
+          324.89
+        ],
+        [
+          "2026-10-29",
+          283.82
+        ],
+        [
+          "2026-10-30",
+          279.84
+        ],
+        [
+          "2026-11-02",
+          278.99
+        ]
+      ],
+      "markers": [
+        {
+          "date": "2026-10-16",
+          "label": "RULLI SELLS",
+          "cue": "Alphabet"
+        }
+      ],
+      "drop": {
+        "date": "2026-10-29",
+        "label": "−12.6% IN ONE DAY",
+        "cue": "fell"
+      }
+    },
+    {
+      "type": "list",
+      "say": "Also disclosed this week: Senator Sheldon Whitehouse sold Microsoft, Representative Cleo Fields bought Nvidia, and Representative John McGuire sold Broadcom.",
+      "title": "ALSO DISCLOSED",
+      "rows": [
+        {
+          "who": "Sen. Sheldon Whitehouse (D)",
+          "ticker": "MSFT",
+          "side": "SELL",
+          "range": "$1K–$15K",
+          "dates": "Traded Oct 15 · Disclosed Nov 3",
+          "cue": "Senator"
+        },
+        {
+          "who": "Rep. Cleo Fields (D)",
+          "ticker": "NVDA",
+          "side": "BUY",
+          "range": "$1K–$15K",
+          "dates": "Traded Oct 1 · Disclosed Oct 23",
+          "cue": "Representative"
+        },
+        {
+          "who": "Rep. John McGuire (R)",
+          "ticker": "AVGO",
+          "side": "SELL",
+          "range": "$1K–$15K",
+          "dates": "Traded Sep 24 · Disclosed Nov 2",
+          "cue": "Representative"
+        }
+      ]
+    },
+    {
+      "type": "outro",
+      "say": "Quick reminder: filings can lag up to forty five days, and amounts are ranges. This isn't proof of wrongdoing, or financial advice. Which trade surprised you most? Tell me in the comments, and follow for every week's Congress trades.",
+      "notes": [
+        "Disclosures can lag trades by up to 45 days",
+        "Amounts are reported as ranges",
+        "Not evidence of wrongdoing · Not financial advice"
+      ],
+      "cta": "FOLLOW FOR WEEKLY CONGRESS TRADES",
+      "cta_cue": "Follow",
+      "credits": "Trades: Tip Ranks (STOCK Act filings)  ·  Prices: Robinhood"
+    }
+  ],
+  "format": "weekly",
+  "natural": true,
+  "voice_fx": true,
+  "music": "groove",
+  "pause_scale": 0.8
+}

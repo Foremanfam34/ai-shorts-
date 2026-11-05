@@ -1,0 +1,580 @@
+<title>AI Shorts Studio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a production rundown. Summary strip first, then the video rundown (rows that open
+   into a player and posting kit) beside a rail with automations and revenue. */
+:root {
+  --bg: #F2F3F6; --surface: #FFFFFF; --surface-2: #E9ECF2; --ink: #111622; --muted: #5B6476; --line: #D7DCE5;
+  --accent: #1D3F8F; --accent-ink: #FFFFFF; --signal: #FFD60A; --signal-ink: #16130A; --rec: #E5484D;
+  --good: #127A3A; --good-bg: #DDF5E5; --warn: #9A4D00; --warn-bg: #FDEFD3; --bad: #BD2335; --bad-bg: #FBE1E4;
+  --shadow: 0 1px 0 rgba(17, 22, 34, .04), 0 8px 24px -14px rgba(17, 22, 34, .22);
+  --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --r: 12px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #090D17; --surface: #10172A; --surface-2: #18213A; --ink: #E9EDF5; --muted: #97A1B6; --line: #243050;
+    --accent: #8DB2FF; --accent-ink: #0A0F1C; --signal: #FFD60A; --signal-ink: #16130A; --rec: #FF5C61;
+    --good: #5BE08F; --good-bg: rgba(91, 224, 143, .13); --warn: #FFC15A; --warn-bg: rgba(255, 193, 90, .13);
+    --bad: #FF7A86; --bad-bg: rgba(255, 122, 134, .13);
+    --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 12px 30px -18px rgba(0, 0, 0, .7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #090D17; --surface: #10172A; --surface-2: #18213A; --ink: #E9EDF5; --muted: #97A1B6; --line: #243050;
+  --accent: #8DB2FF; --accent-ink: #0A0F1C; --signal: #FFD60A; --signal-ink: #16130A; --rec: #FF5C61;
+  --good: #5BE08F; --good-bg: rgba(91, 224, 143, .13); --warn: #FFC15A; --warn-bg: rgba(255, 193, 90, .13);
+  --bad: #FF7A86; --bad-bg: rgba(255, 122, 134, .13);
+  --shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 12px 30px -18px rgba(0, 0, 0, .7);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 28px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.label { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.num { font-variant-numeric: tabular-nums; }
+
+/* header */
+.top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.rec { width: 12px; height: 12px; border-radius: 50%; background: var(--rec); box-shadow: 0 0 0 4px color-mix(in srgb, var(--rec) 22%, transparent); flex: none; }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(32px, 5vw, 44px); letter-spacing: .01em; text-transform: uppercase; line-height: 1; }
+.top p { margin: 0; color: var(--muted); }
+.notice { margin-top: 16px; padding: 12px 14px; border-radius: var(--r); background: var(--warn-bg); color: var(--warn); font-weight: 500; }
+
+/* summary strip */
+.kpis { margin-top: 22px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line);
+  border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.kpi { background: var(--surface); padding: 14px 16px 12px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.kpi:first-child { grid-column: span 2; }
+.kpi .v { font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.kpi.attn .v { color: var(--warn); }
+.kpi small { color: var(--muted); font-size: 12.5px; }
+@media (min-width: 720px) { .kpis { grid-template-columns: repeat(5, minmax(0, 1fr)); } .kpi:first-child { grid-column: auto; } }
+
+/* main grid */
+.grid { margin-top: 28px; display: grid; gap: 28px; }
+@media (min-width: 1040px) { .grid { grid-template-columns: minmax(0, 1fr) 360px; align-items: start; } }
+.head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin-bottom: 12px; }
+h2 { font-family: var(--display); font-weight: 700; font-size: 26px; text-transform: uppercase; letter-spacing: .02em; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip-btn { border: 1px solid var(--line); background: var(--surface); padding: 5px 12px; border-radius: 999px; cursor: pointer; font-size: 13.5px; font-weight: 500; }
+.chip-btn[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip-btn .c { font-family: var(--mono); font-size: 12px; opacity: .7; margin-left: 4px; }
+
+/* rundown */
+.rundown { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.row { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); }
+.row-main { display: grid; grid-template-columns: 64px minmax(0, 1fr); grid-template-areas: "thumb meta" "state state"; gap: 12px 14px; padding: 12px; align-items: center; }
+@media (min-width: 640px) { .row-main { grid-template-columns: 72px minmax(0, 1fr) auto; grid-template-areas: "thumb meta state"; } }
+.thumb { grid-area: thumb; position: relative; padding: 0; border: 0; border-radius: 8px; overflow: hidden; cursor: pointer; background: #000; aspect-ratio: 9 / 16; width: 100%; max-width: 100%; }
+.thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.thumb.missing img { visibility: hidden; }
+.thumb .tc { position: absolute; left: 4px; bottom: 4px; font-family: var(--mono); font-size: 10.5px; color: #fff; background: rgba(0, 0, 0, .72); padding: 1px 5px; border-radius: 4px; }
+.thumb .tri { position: absolute; inset: 0; margin: auto; width: 26px; height: 26px; border-radius: 50%; background: rgba(0, 0, 0, .55); display: grid; place-items: center; }
+.thumb .tri::before { content: ""; margin-left: 3px; border-style: solid; border-width: 6px 0 6px 10px; border-color: transparent transparent transparent #fff; }
+.meta { grid-area: meta; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.slug { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.series { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; padding: 1px 7px; border-radius: 5px; background: var(--surface-2); color: var(--ink); }
+.series.spotlight { background: var(--signal); color: var(--signal-ink); }
+.series.movers { background: var(--good-bg); color: var(--good); }
+.row h3 { font-size: 16px; font-weight: 600; line-height: 1.35; text-wrap: pretty; }
+.marks { display: flex; flex-wrap: wrap; gap: 6px; }
+.mark { font-size: 12px; font-weight: 500; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.mark.on { background: var(--good-bg); border-color: transparent; color: var(--good); }
+.state { grid-area: state; display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+@media (min-width: 640px) { .state { flex-direction: column; align-items: flex-end; } }
+.status { appearance: none; border: 0; border-radius: 999px; padding: 6px 30px 6px 12px; font-weight: 600; font-size: 13.5px; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 15px) 52%, calc(100% - 10px) 52%; background-size: 5px 5px; background-repeat: no-repeat; }
+.status.review { background-color: var(--warn-bg); color: var(--warn); }
+.status.ready { background-color: var(--signal); color: var(--signal-ink); }
+.status.posted { background-color: var(--good-bg); color: var(--good); }
+.status.skipped { background-color: var(--surface-2); color: var(--muted); }
+.status:disabled { cursor: default; }
+.more { border: 1px solid var(--line); background: transparent; border-radius: 8px; padding: 5px 10px; cursor: pointer; font-size: 13.5px; font-weight: 500; color: var(--accent); }
+.detail { border-top: 1px solid var(--line); padding: 14px; display: grid; gap: 18px; }
+@media (min-width: 760px) { .detail { grid-template-columns: 250px minmax(0, 1fr); } }
+.player { width: 100%; max-width: min(100%, 300px); justify-self: center; aspect-ratio: 9 / 16; background: #000; border-radius: 10px; display: block; }
+.hint { color: var(--muted); font-size: 13px; margin: 10px 0 0; }
+.kit { min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+.kit h4 { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+.post { margin: 0; white-space: pre-wrap; word-break: break-word; font-family: var(--mono); font-size: 12.5px; line-height: 1.55; background: var(--surface-2); border-radius: 10px; padding: 12px; max-height: 220px; overflow: auto; }
+.btn { border: 0; border-radius: 9px; padding: 8px 14px; font-weight: 600; cursor: pointer; background: var(--accent); color: var(--accent-ink); }
+.btn.quiet { background: var(--surface-2); color: var(--ink); }
+.btn:disabled { opacity: .5; cursor: default; }
+.row-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.checks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.checks label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+.checks input { margin-top: 3px; accent-color: var(--good); flex: none; }
+.checks .done { color: var(--muted); text-decoration: line-through; }
+.plats { display: grid; gap: 8px; }
+.plat { display: grid; grid-template-columns: 104px minmax(0, 1fr) 96px; gap: 8px; align-items: center; }
+@media (max-width: 480px) { .plat { grid-template-columns: 1fr 96px; } .plat .url { grid-column: 1 / -1; grid-row: 2; } }
+.plat label { display: flex; align-items: center; gap: 8px; font-weight: 500; }
+.plat input[type="checkbox"] { accent-color: var(--good); }
+.field { width: 100%; min-width: 0; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 6px 9px; font-size: 13.5px; }
+.field.num { text-align: right; font-family: var(--mono); }
+textarea.field { min-height: 70px; resize: vertical; }
+
+/* rail */
+.rail { display: flex; flex-direction: column; gap: 18px; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; }
+.panel h2 { font-size: 22px; margin-bottom: 10px; }
+.autos { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.auto { padding: 10px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; }
+.auto:first-child { border-top: 0; padding-top: 0; }
+.auto b { font-weight: 600; }
+.auto .when { font-family: var(--mono); font-size: 12px; color: var(--muted); grid-column: 1 / -1; }
+.auto p { margin: 0; color: var(--muted); font-size: 13.5px; grid-column: 1 / -1; }
+.pill { font-size: 12px; font-weight: 600; padding: 2px 9px; border-radius: 999px; align-self: start; white-space: nowrap; }
+.pill.off { background: var(--surface-2); color: var(--muted); }
+.pill.active { background: var(--good-bg); color: var(--good); }
+.pill.paused { background: var(--warn-bg); color: var(--warn); }
+.rev-total { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+.rev-total .v { font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+.rev-form { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px; }
+.rev-form .wide { grid-column: 1 / -1; }
+.rev-form label { display: flex; flex-direction: column; gap: 3px; font-size: 12.5px; color: var(--muted); font-weight: 500; }
+.rev-list { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; }
+.rev { display: grid; grid-template-columns: 62px minmax(0, 1fr) auto auto; gap: 8px; align-items: center; padding: 8px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.rev .d { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.rev .s { min-width: 0; overflow-wrap: anywhere; }
+.rev .s small { display: block; color: var(--muted); font-size: 12.5px; }
+.rev .a { font-family: var(--mono); font-weight: 600; }
+.rev button { border: 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 12.5px; padding: 2px 4px; border-radius: 6px; }
+.rev button.confirm { color: var(--bad); font-weight: 600; }
+.empty { color: var(--muted); margin: 6px 0 0; font-size: 14px; }
+.err { color: var(--bad); font-size: 13px; margin: 6px 0 0; }
+footer { margin-top: 36px; color: var(--muted); font-size: 13px; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); background: var(--ink); color: var(--bg);
+  padding: 9px 16px; border-radius: 10px; font-weight: 500; font-size: 14px; box-shadow: var(--shadow); max-width: calc(100% - 32px); }
+@media (prefers-reduced-motion: no-preference) { .row, .chip-btn, .btn { transition: background-color .15s, border-color .15s, opacity .15s; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="rec" aria-hidden="true"></span><h1>AI Shorts Studio</h1></div>
+    <p id="today">Every video, where it's posted, and what it earns.</p>
+  </header>
+  <div class="notice" id="notice" role="status" hidden></div>
+
+  <section class="kpis" aria-label="Summary">
+    <div class="kpi attn"><span class="label">Needs review</span><span class="v" id="k-review">–</span><small>Check facts and captions before posting</small></div>
+    <div class="kpi"><span class="label">Ready to post</span><span class="v" id="k-ready">–</span><small>Approved, not posted yet</small></div>
+    <div class="kpi"><span class="label">Posted</span><span class="v" id="k-posted">–</span><small id="k-posted-sub">Videos live somewhere</small></div>
+    <div class="kpi"><span class="label">Views</span><span class="v" id="k-views">–</span><small>Across all platforms</small></div>
+    <div class="kpi"><span class="label">Revenue</span><span class="v" id="k-rev">–</span><small>From the revenue log</small></div>
+  </section>
+
+  <div class="grid">
+    <main>
+      <div class="head">
+        <h2>Rundown</h2>
+        <div class="chips" role="group" aria-label="Filter videos">
+          <button class="chip-btn" data-f="all" aria-pressed="true">All<span class="c" id="c-all"></span></button>
+          <button class="chip-btn" data-f="movers" aria-pressed="false">Daily Movers<span class="c" id="c-movers"></span></button>
+          <button class="chip-btn" data-f="weekly" aria-pressed="false">Weekly<span class="c" id="c-weekly"></span></button>
+          <button class="chip-btn" data-f="spotlight" aria-pressed="false">Spotlight<span class="c" id="c-spotlight"></span></button>
+          <button class="chip-btn" data-f="clip" aria-pressed="false">Clips<span class="c" id="c-clip"></span></button>
+        </div>
+      </div>
+      <ol class="rundown" id="rundown" aria-label="Videos"></ol>
+      <p class="empty" id="rundown-empty">Loading your videos…</p>
+    </main>
+
+    <aside class="rail">
+      <section class="panel" aria-labelledby="auto-h">
+        <h2 id="auto-h">Automations</h2>
+        <ul class="autos" id="autos"></ul>
+        <p class="empty" id="autos-empty">Loading…</p>
+        <p class="hint">To switch one on, ask Claude in your chat. Each run adds its videos to the rundown for you to review.</p>
+      </section>
+      <section class="panel" aria-labelledby="rev-h">
+        <h2 id="rev-h">Revenue</h2>
+        <div class="rev-total"><span class="v" id="rev-total">$0</span><span class="label" id="rev-count">logged</span></div>
+        <form class="rev-form" id="rev-form" novalidate>
+          <label>Date<input class="field" type="date" id="rev-date" required></label>
+          <label>Amount (USD)<input class="field num" type="number" id="rev-amount" min="0" step="0.01" inputmode="decimal" placeholder="0.00" required></label>
+          <label class="wide">Source<input class="field" id="rev-source" list="rev-sources" placeholder="e.g. Clipping campaign" required></label>
+          <datalist id="rev-sources">
+            <option value="Clipping campaign"></option><option value="Clip service client"></option><option value="Sponsor"></option>
+            <option value="YouTube ads"></option><option value="TikTok Creator Rewards"></option><option value="Affiliate"></option><option value="Newsletter"></option>
+          </datalist>
+          <label class="wide">Note (optional)<input class="field" id="rev-note" placeholder="Which video or deal"></label>
+          <div class="wide"><button class="btn" type="submit" id="rev-add">Add to log</button></div>
+          <p class="err wide" id="rev-err" hidden></p>
+        </form>
+        <ul class="rev-list" id="rev-list"></ul>
+        <p class="empty" id="rev-empty">No revenue logged yet. Add your first payout above: a clipping campaign, a sponsor or ad revenue.</p>
+      </section>
+    </aside>
+  </div>
+
+  <footer>Videos, statuses and the revenue log are saved in this page's database. New videos from scheduled runs show up in the rundown on their own.</footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+(() => {
+  const STATUS = [["review", "Needs review"], ["ready", "Ready to post"], ["posted", "Posted"], ["skipped", "Skipped"]];
+  const PLATFORMS = [["youtube", "YouTube"], ["tiktok", "TikTok"], ["instagram", "Instagram"]];
+  const SERIES = { movers: "Daily Movers", weekly: "Weekly", spotlight: "Spotlight", clip: "Clip" };
+  const AUTO = { off: "Not set up", active: "Running", paused: "Paused" };
+  const $ = (s) => document.querySelector(s);
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const blob = (id) => (id ? "/_blob/" + id : "");
+  const todayISO = () => { const d = new Date(); return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); };
+  const fmtTC = (s) => { s = Math.round(s || 0); return String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); };
+  const fmtDate = (iso) => iso ? new Date(iso + "T12:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "";
+  const money = (n) => new Intl.NumberFormat(undefined, { style: "currency", currency: "USD", maximumFractionDigits: (n || 0) % 1 ? 2 : 0 }).format(n || 0);
+  const count = (n) => new Intl.NumberFormat(undefined, { notation: n >= 100000 ? "compact" : "standard" }).format(n || 0);
+
+  const state = { videos: new Map(), autos: [], revenue: [], filter: "all", canWrite: true, canEdit: true, canSave: false, loaded: false };
+  let db = null;
+  const rows = new Map();
+
+  try { const f = localStorage.getItem("studio.filter"); if (f && (f === "all" || SERIES[f])) state.filter = f; } catch (e) {}
+  $("#today").textContent = new Date().toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" }) + " · Every video, where it's posted, and what it earns.";
+  $("#rev-date").value = todayISO();
+
+  // ---------- small UI helpers
+  let toastTimer;
+  function toast(msg) { const t = $("#toast"); t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, 2600); }
+  function notice(msg) { const n = $("#notice"); n.textContent = msg || ""; n.hidden = !msg; }
+
+  // one write at a time per document
+  const queues = new Map();
+  function enqueue(path, fn) {
+    const next = (queues.get(path) || Promise.resolve()).then(fn).catch(onWriteError);
+    queues.set(path, next);
+    return next;
+  }
+  function onWriteError(err) {
+    const code = err && err.code;
+    if (code === "invalid_argument" || code === "not_granted") { state.canWrite = false; applyWriteMode(); toast("You can view this dashboard but not change it."); }
+    else if (code === "quota_exceeded") toast("This page's storage is full. Remove old entries, then try again.");
+    else toast("That change didn't save. Check your connection and try again.");
+  }
+  const updateVideo = (id, patch) => db && enqueue("videos/" + id, () => db.doc("videos/" + id).update(patch));
+
+  // ---------- rundown
+  function buildRow(id) {
+    const li = el("li", "row"); li.dataset.id = id;
+    const main = el("div", "row-main");
+    const thumb = el("button", "thumb"); thumb.type = "button";
+    const img = el("img"); img.alt = ""; img.loading = "lazy"; img.addEventListener("error", () => thumb.classList.add("missing"));
+    const tc = el("span", "tc"); const tri = el("span", "tri"); tri.setAttribute("aria-hidden", "true");
+    thumb.append(img, tri, tc);
+    const meta = el("div", "meta");
+    const slug = el("div", "slug"); const show = el("span", "label"); const series = el("span", "series"); const date = el("span", "label");
+    slug.append(show, series, date);
+    const h3 = el("h3"); const marks = el("div", "marks");
+    meta.append(slug, h3, marks);
+    const st = el("div", "state");
+    const sel = el("select", "status"); sel.setAttribute("aria-label", "Status");
+    for (const [v, l] of STATUS) { const o = el("option", null, l); o.value = v; sel.append(o); }
+    sel.addEventListener("change", () => updateVideo(id, { status: sel.value }));
+    const more = el("button", "more", "Open"); more.type = "button"; more.setAttribute("aria-expanded", "false");
+    st.append(sel, more);
+    main.append(thumb, meta, st);
+    const detail = el("div", "detail"); detail.hidden = true;
+    li.append(main, detail);
+    const r = { li, img, tc, show, series, date, h3, marks, sel, more, detail, thumb, built: false, open: false, v: null };
+    const toggle = (play) => { r.open = !r.open || play === true; if (r.open) buildDetail(id, r); detail.hidden = !r.open;
+      more.textContent = r.open ? "Close" : "Open"; more.setAttribute("aria-expanded", String(r.open));
+      if (r.open && play === true && r.video) r.video.play().catch(() => {}); if (!r.open && r.video) r.video.pause(); };
+    more.addEventListener("click", () => toggle());
+    thumb.addEventListener("click", () => toggle(true));
+    return r;
+  }
+
+  function buildDetail(id, r) {
+    if (r.built) return;
+    r.built = true;
+    const v = r.v || {};
+    const video = el("video", "player"); video.controls = true; video.playsInline = true; video.preload = "metadata";
+    if (v.cover) video.poster = blob(v.cover);
+    if (v.video) video.src = blob(v.video);
+    r.video = video;
+    const kit = el("div", "kit");
+
+    const postSec = el("section"); postSec.append(el("h4", null, "Post text"));
+    const pre = el("pre", "post"); r.pre = pre;
+    const actions = el("div", "row-actions");
+    const copy = el("button", "btn", "Copy post text"); copy.type = "button";
+    copy.addEventListener("click", () => {
+      const text = pre.textContent;
+      const done = (msg) => { copy.textContent = msg; setTimeout(() => { copy.textContent = "Copy post text"; }, 1800); };
+      const select = () => { const range = document.createRange(); range.selectNodeContents(pre); const s = getSelection(); s.removeAllRanges(); s.addRange(range); done("Selected. Press Ctrl+C"); };
+      try { navigator.clipboard.writeText(text).then(() => done("Copied"), select); } catch (e) { select(); }
+    });
+    actions.append(copy);
+    // Save the MP4 to this device so it can be posted from the phone's apps
+    const save = el("button", "btn quiet", "Save video"); save.type = "button"; save.hidden = !state.canSave;
+    save.addEventListener("click", async () => {
+      const v2 = r.v || {};
+      const dl = window.claude && window.claude.use ? await window.claude.use("downloads") : null;
+      if (!dl || !v2.video) { toast("Saving isn't available here. Open this page on claude.ai."); return; }
+      save.disabled = true; save.textContent = "Preparing…";
+      try {
+        const res = await fetch(blob(v2.video));
+        if (!res.ok) throw { code: "fetch" };
+        const file = await res.blob();
+        const name = (v2.title || "video").toLowerCase().replace(/[^a-z0-9 ]+/g, "").trim().replace(/\s+/g, "-").slice(0, 60) + ".mp4";
+        const out = await dl.save({ filename: name, data: file });
+        if (out && out.status === "saved") toast("Saved " + name);
+      } catch (e) {
+        const code = e && e.code;
+        if (code === "declined") { /* the viewer said no */ }
+        else if (code === "rate_limited") toast("A save is already waiting for you. Try again in a moment.");
+        else if (code === "too_large") toast("This video is too large to save in this app.");
+        else toast("The video couldn't be saved. Try again.");
+      } finally { save.disabled = false; save.textContent = "Save video"; }
+    });
+    r.saveBtn = save;
+    actions.append(save); postSec.append(pre, actions);
+
+    const checkSec = el("section"); checkSec.append(el("h4", null, "Check before posting"));
+    const checks = el("ul", "checks"); r.checks = checks; checkSec.append(checks);
+
+    const platSec = el("section"); platSec.append(el("h4", null, "Where it's posted"));
+    const plats = el("div", "plats"); r.plat = {};
+    for (const [key, name] of PLATFORMS) {
+      const row = el("div", "plat");
+      const lab = el("label"); const cb = el("input"); cb.type = "checkbox"; lab.append(cb, document.createTextNode(name));
+      const url = el("input", "field url"); url.type = "url"; url.placeholder = "Paste the post link"; url.setAttribute("aria-label", name + " link");
+      const views = el("input", "field num"); views.type = "number"; views.min = "0"; views.step = "1"; views.inputMode = "numeric"; views.placeholder = "Views"; views.setAttribute("aria-label", name + " views");
+      cb.addEventListener("change", () => {
+        const patch = { platforms: { [key]: { posted: cb.checked, posted_at: cb.checked ? todayISO() : null } } };
+        if (cb.checked && (r.v || {}).status !== "posted") patch.status = "posted";
+        updateVideo(id, patch);
+      });
+      url.addEventListener("change", () => updateVideo(id, { platforms: { [key]: { url: url.value.trim() } } }));
+      views.addEventListener("change", () => { const n = Math.max(0, parseInt(views.value || "0", 10) || 0); updateVideo(id, { platforms: { [key]: { views: n } } }); });
+      row.append(lab, url, views); plats.append(row);
+      r.plat[key] = { cb, url, views };
+    }
+    platSec.append(plats);
+
+    const noteSec = el("section"); noteSec.append(el("h4", null, "Notes"));
+    const notes = el("textarea", "field"); notes.placeholder = "Anything to remember about this video"; notes.setAttribute("aria-label", "Notes");
+    notes.addEventListener("blur", () => { if (notes.value !== ((r.v || {}).notes || "")) updateVideo(id, { notes: notes.value }); });
+    r.notes = notes; noteSec.append(notes);
+
+    kit.append(postSec, checkSec, platSec, noteSec);
+    r.detail.append(video, kit);
+    patchDetail(id, r, v);
+    applyWriteMode();
+  }
+
+  function patchRow(id, r, v) {
+    r.v = v;
+    const cover = blob(v.cover);
+    if (cover && r.img.getAttribute("src") !== cover) { r.thumb.classList.remove("missing"); r.img.src = cover; }
+    if (!cover) r.thumb.classList.add("missing");
+    r.thumb.setAttribute("aria-label", "Play " + (v.title || "video"));
+    r.tc.textContent = fmtTC(v.duration);
+    r.show.textContent = v.show || "";
+    r.series.textContent = SERIES[v.series] || v.series || "";
+    r.series.className = "series " + (v.series || "");
+    r.date.textContent = fmtDate(v.created);
+    r.h3.textContent = v.title || "Untitled video";
+    r.marks.replaceChildren(...PLATFORMS.map(([k, n]) => {
+      const p = (v.platforms || {})[k] || {};
+      const m = el("span", "mark" + (p.posted ? " on" : ""), p.posted ? n + (p.views ? " · " + count(p.views) : "") : n);
+      m.title = p.posted ? "Posted on " + n : "Not on " + n + " yet";
+      return m;
+    }));
+    if (document.activeElement !== r.sel) r.sel.value = v.status || "review";
+    r.sel.className = "status " + (v.status || "review");
+    if (r.built) patchDetail(id, r, v);
+  }
+
+  function patchDetail(id, r, v) {
+    r.pre.textContent = [v.post_title, v.post_text, v.hashtags].filter(Boolean).join("\n\n");
+    if (!r.checks.contains(document.activeElement)) {
+      const list = Array.isArray(v.checks) ? v.checks : [];
+      r.checks.replaceChildren(...list.map((c, i) => {
+        const li = el("li"); const lab = el("label"); const cb = el("input"); cb.type = "checkbox"; cb.checked = !!c.done;
+        const span = el("span", c.done ? "done" : "", c.text || "");
+        cb.disabled = !state.canWrite;
+        cb.addEventListener("change", () => {
+          const cur = Array.isArray((r.v || {}).checks) ? r.v.checks : [];
+          updateVideo(id, { checks: cur.map((x, j) => (j === i ? { text: x.text, done: cb.checked } : { text: x.text, done: !!x.done })) });
+        });
+        lab.append(cb, span); li.append(lab); return li;
+      }));
+      if (!list.length) r.checks.replaceChildren(el("li", "empty", "Nothing to check."));
+    }
+    for (const [key] of PLATFORMS) {
+      const p = (v.platforms || {})[key] || {}; const f = r.plat[key];
+      if (document.activeElement !== f.cb) f.cb.checked = !!p.posted;
+      if (document.activeElement !== f.url) f.url.value = p.url || "";
+      if (document.activeElement !== f.views) f.views.value = p.views ? String(p.views) : "";
+    }
+    if (document.activeElement !== r.notes) r.notes.value = v.notes || "";
+  }
+
+  function renderRundown() {
+    const list = $("#rundown");
+    const all = [...state.videos.entries()].sort((a, b) =>
+      String(b[1].created || "").localeCompare(String(a[1].created || "")) || (a[1].order || 0) - (b[1].order || 0));
+    for (const [id, r] of rows) if (!state.videos.has(id)) { r.li.remove(); rows.delete(id); }
+    all.forEach(([id, v], i) => {
+      let r = rows.get(id);
+      if (!r) { r = buildRow(id); rows.set(id, r); }
+      patchRow(id, r, v);
+      if (list.children[i] !== r.li) list.insertBefore(r.li, list.children[i] || null);
+    });
+    let shown = 0;
+    for (const [id, v] of all) { const hide = state.filter !== "all" && v.series !== state.filter; rows.get(id).li.hidden = hide; if (!hide) shown++; }
+    for (const k of ["all", ...Object.keys(SERIES)]) {
+      const n = k === "all" ? all.length : all.filter(([, v]) => v.series === k).length;
+      $("#c-" + k).textContent = n ? String(n) : "";
+    }
+    const empty = $("#rundown-empty");
+    if (!state.loaded) { empty.hidden = false; }
+    else if (!all.length) { empty.hidden = false; empty.textContent = "No videos yet. Each video you render, by hand or from a scheduled run, lands here for review."; }
+    else if (!shown) { empty.hidden = false; empty.textContent = "No " + (SERIES[state.filter] || "").toLowerCase() + " videos yet."; }
+    else empty.hidden = true;
+    applyWriteMode();
+  }
+
+  // ---------- summary
+  function renderKpis() {
+    const vids = [...state.videos.values()];
+    const by = (s) => vids.filter((v) => (v.status || "review") === s).length;
+    let views = 0, live = 0;
+    for (const v of vids) for (const [k] of PLATFORMS) { const p = (v.platforms || {})[k] || {}; views += p.views || 0; if (p.posted) live++; }
+    $("#k-review").textContent = state.loaded ? by("review") : "–";
+    $("#k-ready").textContent = state.loaded ? by("ready") : "–";
+    $("#k-posted").textContent = state.loaded ? by("posted") : "–";
+    $("#k-posted-sub").textContent = live ? live + " platform post" + (live === 1 ? "" : "s") + " in total" : "Videos live somewhere";
+    $("#k-views").textContent = state.loaded ? count(views) : "–";
+    const total = state.revenue.reduce((s, r) => s + (Number(r.amount) || 0), 0);
+    $("#k-rev").textContent = !state.canEdit ? "—" : money(total);
+  }
+
+  // ---------- automations
+  function renderAutos() {
+    const ul = $("#autos");
+    const items = [...state.autos].sort((a, b) => (a.order || 0) - (b.order || 0));
+    ul.replaceChildren(...items.map((a) => {
+      const li = el("li", "auto");
+      li.append(el("b", null, a.name || "Automation"), el("span", "pill " + (AUTO[a.status] ? a.status : "off"), AUTO[a.status] || AUTO.off));
+      if (a.schedule) li.append(el("span", "when", a.schedule + (a.last_run ? " · last run " + fmtDate(a.last_run) : "")));
+      if (a.description) li.append(el("p", null, a.description));
+      return li;
+    }));
+    const empty = $("#autos-empty");
+    empty.hidden = !!items.length;
+    if (!items.length) empty.textContent = state.loaded ? "No automations yet." : "Loading…";
+  }
+
+  // ---------- revenue
+  function renderRevenue() {
+    const total = state.revenue.reduce((s, r) => s + (Number(r.amount) || 0), 0);
+    $("#rev-total").textContent = money(total);
+    $("#rev-count").textContent = state.revenue.length ? state.revenue.length + " entr" + (state.revenue.length === 1 ? "y" : "ies") : "logged";
+    const ul = $("#rev-list");
+    const items = [...state.revenue].sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+    ul.replaceChildren(...items.map((r) => {
+      const li = el("li", "rev");
+      const s = el("span", "s", r.source || "Revenue"); if (r.note) s.append(el("small", null, r.note));
+      const del = el("button", null, "Remove"); del.type = "button"; del.hidden = !state.canWrite;
+      let armed = null;
+      del.addEventListener("click", () => {
+        if (!armed) { del.textContent = "Confirm"; del.classList.add("confirm"); armed = setTimeout(() => { armed = null; del.textContent = "Remove"; del.classList.remove("confirm"); }, 4000); return; }
+        clearTimeout(armed); armed = null;
+        enqueue("revenue/" + r._id, () => db.doc("revenue/" + r._id).delete()).then(() => toast("Removed " + money(r.amount)));
+      });
+      li.append(el("span", "d", fmtDate(r.date)), s, el("span", "a", money(r.amount)), del);
+      return li;
+    }));
+    const empty = $("#rev-empty");
+    if (!state.canEdit) { empty.hidden = false; empty.textContent = "Revenue is visible to people who can edit this page."; }
+    else empty.hidden = !!items.length;
+    renderKpis();
+  }
+
+  $("#rev-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const err = $("#rev-err"); err.hidden = true;
+    const amount = Math.round(parseFloat($("#rev-amount").value) * 100) / 100;
+    const source = $("#rev-source").value.trim();
+    const date = $("#rev-date").value || todayISO();
+    if (!(amount > 0)) { err.textContent = "Enter an amount above $0."; err.hidden = false; return; }
+    if (!source) { err.textContent = "Add where the money came from, like \"Sponsor\"."; err.hidden = false; return; }
+    if (!db) { err.textContent = "Open this page on claude.ai to save entries."; err.hidden = false; return; }
+    const btn = $("#rev-add"); btn.disabled = true;
+    try {
+      await db.collection("revenue").add({ date, source, amount, note: $("#rev-note").value.trim(), created: new Date().toISOString() });
+      $("#rev-amount").value = ""; $("#rev-note").value = "";
+      toast("Added " + money(amount));
+    } catch (x) { onWriteError(x); }
+    finally { btn.disabled = false; }
+  });
+
+  // ---------- filters + permissions
+  document.querySelectorAll(".chip-btn").forEach((b) => {
+    b.setAttribute("aria-pressed", String(b.dataset.f === state.filter));
+    b.addEventListener("click", () => {
+      state.filter = b.dataset.f;
+      document.querySelectorAll(".chip-btn").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      try { localStorage.setItem("studio.filter", state.filter); } catch (e) {}
+      renderRundown();
+    });
+  });
+
+  function applyWriteMode() {
+    const ro = !state.canWrite;
+    document.querySelectorAll(".status, .plat input, .kit textarea").forEach((x) => { x.disabled = ro; });
+    $("#rev-form").hidden = ro || !state.canEdit;
+  }
+
+  // ---------- data
+  (async () => {
+    renderKpis(); renderRevenue();
+    const timer = setTimeout(() => { if (!state.loaded) notice("Your data hasn't loaded yet. It will appear here as soon as the connection catches up."); }, 10000);
+    db = window.claude && window.claude.use ? await window.claude.use("db") : null;
+    if (!db) {
+      clearTimeout(timer);
+      state.canWrite = false; state.canEdit = false;
+      notice("Open this page on claude.ai to see your videos and posting data.");
+      $("#rundown-empty").textContent = "Your videos load when this page is opened on claude.ai.";
+      $("#autos-empty").textContent = "Not available here.";
+      applyWriteMode(); return;
+    }
+    state.canSave = !!(await window.claude.use("downloads"));
+    rows.forEach((r) => { if (r.saveBtn) r.saveBtn.hidden = !state.canSave; });
+    const user = await window.claude.use("user");
+    if (user) {
+      const [w, edit] = await Promise.all([user.can("data.write"), user.canEdit()]);
+      state.canWrite = w !== false;
+      state.canEdit = edit || w === null;
+    }
+    const settle = (snap) => { if (!snap.metadata.fromCache && !state.loaded) { state.loaded = true; clearTimeout(timer); notice(""); } };
+    const fail = (e) => { clearTimeout(timer); if (e && e.code === "revoked") notice("This page's data is no longer available to you."); else notice("Your data couldn't be loaded. Reload the page to try again."); };
+    db.collection("videos").onSnapshot((snap) => {
+      state.videos = new Map(snap.docs.map((d) => [d.id, d.data()]));
+      settle(snap); renderRundown(); renderKpis(); renderAutos();
+    }, fail);
+    db.collection("automations").onSnapshot((snap) => { state.autos = snap.docs.map((d) => d.data()); renderAutos(); }, () => {});
+    if (state.canEdit) {
+      db.collection("revenue").onSnapshot((snap) => { state.revenue = snap.docs.map((d) => Object.assign({ _id: d.id }, d.data())); renderRevenue(); }, () => {});
+    } else renderRevenue();
+    applyWriteMode();
+  })();
+})();
+</script>

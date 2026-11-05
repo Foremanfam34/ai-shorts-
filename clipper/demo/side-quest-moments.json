@@ -1,0 +1,47 @@
+[
+  {
+    "start": 12.4,
+    "end": 33.9,
+    "title": "The #1 reason people quit",
+    "caption": "We asked listeners why they quit their side hustle. The top answer wasn't money.",
+    "hashtags": ["#sidehustle", "#entrepreneur", "#motivation", "#smallbusiness"],
+    "why": "Opens on a question viewers instinctively answer (and get wrong), then pays off with a quotable line.",
+    "score": 9
+  },
+  {
+    "start": 34.4,
+    "end": 62.3,
+    "title": "Welcome to the valley of nothing",
+    "caption": "Week six. Zero sales, eleven views, and your mom liked the post. Here's why that's good news.",
+    "hashtags": ["#sidehustle", "#creator", "#consistency", "#startup"],
+    "why": "Hyper-relatable pain point, a named concept, a laugh line, and an optimistic twist at the end.",
+    "score": 8
+  },
+  {
+    "start": 69.0,
+    "end": 91.8,
+    "title": "Two rules that beat motivation",
+    "caption": "Twenty minutes a day beats a perfect weekend once a month. Track the reps, not the results.",
+    "hashtags": ["#productivity", "#habits", "#sidehustle", "#discipline"],
+    "why": "Concrete, saveable advice with two quotable one-liners; high save/share potential.",
+    "score": 8
+  },
+  {
+    "start": 92.3,
+    "end": 115.8,
+    "title": "Decision fatigue kills side hustles",
+    "caption": "Pick an end date in advance so you stop re-deciding every morning.",
+    "hashtags": ["#decisionfatigue", "#mindset", "#sidehustle", "#entrepreneurship"],
+    "why": "Counterintuitive tactic plus a mug-worthy line and a light comedic button.",
+    "score": 9
+  },
+  {
+    "start": 116.2,
+    "end": 129.6,
+    "title": "If you quit before, watch this",
+    "caption": "Quitting before isn't proof you can't do this. Shrink the plan, not the dream.",
+    "hashtags": ["#motivation", "#sidehustle", "#selfimprovement", "#goals"],
+    "why": "Emotional, encouraging, very shareable; short enough to loop.",
+    "score": 8
+  }
+]
