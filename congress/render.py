@@ -371,14 +371,16 @@ def draw_chart(img, d, sc, t, dur):
     if k < n - 1:
         pts.append((X(k + frac), Y(prices[k] + (prices[k + 1] - prices[k]) * frac)))
     drop = sc.get("drop")
+    # the big one-day move: red for a fall, green for a jump (or an explicit "color")
+    dcol = COLORS[drop.get("color") or ("green" if drop["label"].lstrip().startswith("+") else "red")] if drop else RED
     if len(pts) >= 2:
         cd.polygon(pts + [(pts[-1][0], Y(lo)), (pts[0][0], Y(lo))], fill=rgba(BLUE, 0.14))
         cd.line(pts, fill=rgba(BLUE), width=7 * S, joint="curve")
-        if drop and pidx >= drop["_i"] - 1:  # the big one-day move in red
+        if drop and pidx >= drop["_i"] - 1:
             j = drop["_i"] - 1
             seg = min(1.0, pidx - j)
             cd.line([(X(j), Y(prices[j])), (X(j + seg), Y(prices[j] + (prices[j + 1] - prices[j]) * seg))],
-                    fill=rgba(RED), width=9 * S)
+                    fill=rgba(dcol), width=9 * S)
         hx, hy = pts[-1]
         cd.ellipse((hx - 11 * S, hy - 11 * S, hx + 11 * S, hy + 11 * S), fill=rgba(TEXT))
 
@@ -412,8 +414,8 @@ def draw_chart(img, d, sc, t, dur):
             j = drop["_i"]
             bx1, by = X(j - 1) - 10 * S, Y((prices[j - 1] + prices[j]) / 2) + 30 * S
             cd.rounded_rectangle((bx1 - tw - 40 * S, by - 34 * S * kk, bx1, by + 34 * S * kk),
-                                 radius=14 * S, fill=rgba(RED, pdp * 2))
-            draw_text(region, (bx1 - 20 * S - tw / 2, by), lab, f, TEXT, clamp(pdp * 2) * FADE, "mm")
+                                 radius=14 * S, fill=rgba(dcol, pdp * 2))
+            draw_text(region, (bx1 - 20 * S - tw / 2, by), lab, f, on_color(dcol), clamp(pdp * 2) * FADE, "mm")
 
     region = region.resize((rx1 - rx0, ry1 - ry0), Image.LANCZOS)
     shake = 0

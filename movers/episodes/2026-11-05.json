@@ -1,0 +1,315 @@
+{
+ "id": "movers-2026-11-05",
+ "slug": "market-movers-2026-11-05",
+ "format": "movers",
+ "series": "MARKET MOVERS",
+ "badge": "DAILY",
+ "week_label": "Nov 5, 2026",
+ "source_line": "Data: Robinhood (prices and earnings)",
+ "voice": "am_michael",
+ "speed": 1.1,
+ "pause_scale": 0.8,
+ "natural": true,
+ "voice_fx": true,
+ "music": "groove",
+ "say_as": {
+  "AppLovin": "App Lovin",
+  "Airbnb": "Air bee en bee"
+ },
+ "post": {
+  "title": "AppLovin Soared 31% as the Nasdaq Plunged 6% 📈",
+  "description": "AppLovin (APP) jumped 31.1% on Thursday, Nov 5, the day after beating earnings ($4.30 a share vs $4.01 expected), while the Nasdaq 100 (QQQ) fell 6.4%. It's now up 56% in four trading days.\n\nThursday's big movers:\n📈 AppLovin (APP) +31.1%\n📈 Unity (U) +15.0%\n📉 Sandisk (SNDK) −22.3%\n📉 AMD −17.7%\n📉 Micron (MU) −17.2%\n📉 Nvidia (NVDA) −9.3%\n\nAfter the bell (as of 5:19 pm ET):\n📈 Cloudflare (NET) +14.8%, EPS $0.38 vs $0.28 expected\n📈 Airbnb (ABNB) +10.6%, EPS $3.16 vs $2.85 expected\n📉 DraftKings (DKNG) −21.7%, EPS −$0.53 vs −$0.26 expected\n\nS&P 500 (SPY): −4.4% · Nasdaq 100 (QQQ): −6.4% · Dow (DIA): −3.5%\n\nWhich move would you have traded? Tell me in the comments.\nSubscribe for the market's biggest moves every trading day.\n\nAfter-hours prices can change by the open. Data: Robinhood. Narrated with an AI voice. Not financial advice.",
+  "hashtags": [
+   "#stocks",
+   "#stockmarket",
+   "#earnings",
+   "#applovin",
+   "#investing"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "hook",
+   "say": "AppLovin jumped thirty one percent on Thursday... on a day the Nasdaq plunged more than six.",
+   "line1": "APPLOVIN (APP) · NOV 5",
+   "big_text": "+31.1%",
+   "big_color": "green",
+   "line2": "THE DAY AFTER ITS EARNINGS",
+   "pill": "NASDAQ 100 −6.4% · S&P 500 −4.4%",
+   "pill_color": "red",
+   "pill_cue": "plunged"
+  },
+  {
+   "type": "bars",
+   "say": "Unity rose fifteen percent after its earnings. But chip stocks got crushed. Sandisk fell twenty two, AMD almost eighteen, Micron seventeen, and Nvidia more than nine.",
+   "title": "BIG MOVES · NOV 5",
+   "sub": "Nov 5 vs Nov 4 close  ·  companies worth $15B+",
+   "rows": [
+    {
+     "ticker": "APP",
+     "from": 271.75,
+     "to": 356.36
+    },
+    {
+     "ticker": "U",
+     "from": 42.46,
+     "to": 48.845,
+     "cue": "Unity"
+    },
+    {
+     "ticker": "SNDK",
+     "from": 1037.4,
+     "to": 806.38,
+     "cue": "Sandisk"
+    },
+    {
+     "ticker": "AMD",
+     "from": 488.78,
+     "to": 402.51,
+     "cue": "AMD"
+    },
+    {
+     "ticker": "MU",
+     "from": 795.23,
+     "to": 658.36,
+     "cue": "Micron"
+    },
+    {
+     "ticker": "NVDA",
+     "from": 200.13,
+     "to": 181.59,
+     "cue": "Nvidia"
+    }
+   ]
+  },
+  {
+   "type": "chart",
+   "say": "Zoom out, and the AppLovin run is even wilder... it's up fifty six percent in just four trading days.",
+   "who": "APPLOVIN (APP)",
+   "sub": "Daily close, Sep 15 → Nov 5",
+   "series": [
+    [
+     "2026-09-15",
+     331.46
+    ],
+    [
+     "2026-09-16",
+     326.56
+    ],
+    [
+     "2026-09-17",
+     321.6
+    ],
+    [
+     "2026-09-18",
+     308.06
+    ],
+    [
+     "2026-09-21",
+     330.17
+    ],
+    [
+     "2026-09-22",
+     328.73
+    ],
+    [
+     "2026-09-23",
+     315.25
+    ],
+    [
+     "2026-09-24",
+     312.47
+    ],
+    [
+     "2026-09-25",
+     310.75
+    ],
+    [
+     "2026-09-28",
+     308.24
+    ],
+    [
+     "2026-09-29",
+     305.66
+    ],
+    [
+     "2026-09-30",
+     290.43
+    ],
+    [
+     "2026-10-01",
+     281.31
+    ],
+    [
+     "2026-10-02",
+     268.22
+    ],
+    [
+     "2026-10-05",
+     281.97
+    ],
+    [
+     "2026-10-06",
+     278.78
+    ],
+    [
+     "2026-10-07",
+     281.29
+    ],
+    [
+     "2026-10-08",
+     280.12
+    ],
+    [
+     "2026-10-09",
+     277.04
+    ],
+    [
+     "2026-10-12",
+     270.87
+    ],
+    [
+     "2026-10-13",
+     272.28
+    ],
+    [
+     "2026-10-14",
+     262.19
+    ],
+    [
+     "2026-10-15",
+     279.29
+    ],
+    [
+     "2026-10-16",
+     266.13
+    ],
+    [
+     "2026-10-19",
+     269.12
+    ],
+    [
+     "2026-10-20",
+     272.46
+    ],
+    [
+     "2026-10-21",
+     267.9
+    ],
+    [
+     "2026-10-22",
+     264.28
+    ],
+    [
+     "2026-10-23",
+     260.25
+    ],
+    [
+     "2026-10-26",
+     260.74
+    ],
+    [
+     "2026-10-27",
+     262.82
+    ],
+    [
+     "2026-10-28",
+     259.97
+    ],
+    [
+     "2026-10-29",
+     254.91
+    ],
+    [
+     "2026-10-30",
+     228.5
+    ],
+    [
+     "2026-11-02",
+     228.85
+    ],
+    [
+     "2026-11-03",
+     245.51
+    ],
+    [
+     "2026-11-04",
+     271.75
+    ],
+    [
+     "2026-11-05",
+     356.36
+    ]
+   ],
+   "markers": [
+    {
+     "date": "2026-10-30",
+     "label": "4 DAYS AGO"
+    }
+   ],
+   "drop": {
+    "date": "2026-11-05",
+    "label": "+31.1% ON NOV 5",
+    "cue": "wilder"
+   },
+   "stat": {
+    "value": "+56.0%",
+    "label": "in four trading days",
+    "cue": "up"
+   }
+  },
+  {
+   "type": "list",
+   "say": "After the bell, Cloudflare jumped almost fifteen percent and Airbnb more than ten, both beating estimates. DraftKings missed... and fell almost twenty two percent.",
+   "title": "AFTER THE BELL · 5:19 PM ET",
+   "rows": [
+    {
+     "who": "Cloudflare",
+     "ticker": "NET",
+     "side": "UP",
+     "range": "+14.8%",
+     "dates": "After hours · EPS $0.38 vs $0.28 expected",
+     "cue": "Cloudflare"
+    },
+    {
+     "who": "Airbnb",
+     "ticker": "ABNB",
+     "side": "UP",
+     "range": "+10.6%",
+     "dates": "After hours · EPS $3.16 vs $2.85 expected",
+     "cue": "Airbnb"
+    },
+    {
+     "who": "DraftKings",
+     "ticker": "DKNG",
+     "side": "DOWN",
+     "range": "−21.7%",
+     "dates": "After hours · EPS −$0.53 vs −$0.26 expected",
+     "cue": "DraftKings"
+    }
+   ]
+  },
+  {
+   "type": "outro",
+   "say": "After hours prices can change by the open, and this isn't financial advice. Which move would you have traded? Subscribe for the biggest moves, every day.",
+   "notes": [
+    "After-hours prices can change by the open",
+    "One-day moves don't predict the next day",
+    "Not financial advice"
+   ],
+   "cta": "SUBSCRIBE FOR DAILY MARKET MOVERS",
+   "cta_cue": "Subscribe",
+   "credits": "Prices and earnings: Robinhood  ·  S&P 500 via SPY, Nasdaq 100 via QQQ  ·  Nov 5, 2026"
+  }
+ ],
+ "caption_fix": [
+  [
+   "S and P500",
+   "S&P 500"
+  ],
+  [
+   "S and P 500",
+   "S&P 500"
+  ]
+ ]
+}
