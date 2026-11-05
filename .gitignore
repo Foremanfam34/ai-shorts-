@@ -1,6 +1,6 @@
-models/
-fonts/
-.cache/
-out/
-samples/
+models
+fonts
+.cache
+out
+samples
 __pycache__/
