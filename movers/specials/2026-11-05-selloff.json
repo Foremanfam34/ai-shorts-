@@ -1,0 +1,316 @@
+{
+ "id": "selloff-2026-11-05",
+ "slug": "market-selloff-2026-11-05",
+ "format": "movers",
+ "series": "MARKET MOVERS",
+ "badge": "MORNING",
+ "week_label": "Nov 5, 2026 · 10:56 AM ET",
+ "source_line": "Data: Robinhood · live prices as of 10:56 AM ET",
+ "voice": "am_michael",
+ "speed": 1.1,
+ "pause_scale": 0.8,
+ "natural": true,
+ "voice_fx": true,
+ "music": "groove",
+ "say_as": {},
+ "caption_fix": [
+  [
+   "S and P500",
+   "S&P 500"
+  ],
+  [
+   "S and P 500",
+   "S&P 500"
+  ],
+  [
+   "S<unk>P 500",
+   "S&P 500"
+  ],
+  [
+   "1056",
+   "10:56"
+  ]
+ ],
+ "scenes": [
+  {
+   "type": "hook",
+   "say": "The Nasdaq is down more than five and a half percent... and it's not even lunchtime.",
+   "line1": "NASDAQ 100 (QQQ) THIS MORNING",
+   "big_text": "-5.6%",
+   "big_color": "red",
+   "line2": "AS OF 10:56 AM ET",
+   "pill": "S&P 500 −3.3% · DOW −2.3%",
+   "pill_color": "red",
+   "pill_cue": "lunchtime"
+  },
+  {
+   "type": "bars",
+   "say": "Here's the damage. The Nasdaq one hundred, down five point six. The S and P five hundred, three point three. Small caps, two point eight. And the Dow, two point three.",
+   "title": "THE DAMAGE · 10:56 AM ET",
+   "sub": "vs Nov 4 close  ·  index ETFs",
+   "rows": [
+    {
+     "ticker": "QQQ",
+     "from": 691.95,
+     "to": 653.19,
+     "cue": "Nasdaq"
+    },
+    {
+     "ticker": "SPY",
+     "from": 766.81,
+     "to": 741.22
+    },
+    {
+     "ticker": "IWM",
+     "from": 284.02,
+     "to": 275.95,
+     "cue": "Small"
+    },
+    {
+     "ticker": "DIA",
+     "from": 533.11,
+     "to": 520.83,
+     "cue": "Dow"
+    }
+   ]
+  },
+  {
+   "type": "chart",
+   "say": "Zoom out, and it looks even worse... The Nasdaq is now fourteen percent below its October sixth close. More than ten percent off a recent high is what traders call a correction.",
+   "who": "NASDAQ 100 (QQQ)",
+   "sub": "Daily close, Sep 15 → Nov 4  ·  Nov 5 as of 10:56 AM ET",
+   "markers": [
+    {
+     "date": "2026-10-06",
+     "label": "OCT 6 CLOSE"
+    }
+   ],
+   "drop": {
+    "date": "2026-11-05",
+    "label": "-5.6% TODAY",
+    "cue": "worse"
+   },
+   "stat": {
+    "value": "-14.0%",
+    "label": "below its Oct 6 close",
+    "cue": "below"
+   },
+   "series": [
+    [
+     "2026-09-15",
+     704.54
+    ],
+    [
+     "2026-09-16",
+     704.72
+    ],
+    [
+     "2026-09-17",
+     716.92
+    ],
+    [
+     "2026-09-18",
+     721.45
+    ],
+    [
+     "2026-09-21",
+     741.47
+    ],
+    [
+     "2026-09-22",
+     747.46
+    ],
+    [
+     "2026-09-23",
+     741.21
+    ],
+    [
+     "2026-09-24",
+     741.1
+    ],
+    [
+     "2026-09-25",
+     744.5
+    ],
+    [
+     "2026-09-28",
+     736.53
+    ],
+    [
+     "2026-09-29",
+     737.93
+    ],
+    [
+     "2026-09-30",
+     739.77
+    ],
+    [
+     "2026-10-01",
+     742.03
+    ],
+    [
+     "2026-10-02",
+     749.58
+    ],
+    [
+     "2026-10-05",
+     756.2
+    ],
+    [
+     "2026-10-06",
+     759.66
+    ],
+    [
+     "2026-10-07",
+     757.73
+    ],
+    [
+     "2026-10-08",
+     747.58
+    ],
+    [
+     "2026-10-09",
+     751.27
+    ],
+    [
+     "2026-10-12",
+     746.04
+    ],
+    [
+     "2026-10-13",
+     743.57
+    ],
+    [
+     "2026-10-14",
+     728.95
+    ],
+    [
+     "2026-10-15",
+     728.0
+    ],
+    [
+     "2026-10-16",
+     709.8
+    ],
+    [
+     "2026-10-19",
+     718.36
+    ],
+    [
+     "2026-10-20",
+     717.63
+    ],
+    [
+     "2026-10-21",
+     725.2
+    ],
+    [
+     "2026-10-22",
+     704.47
+    ],
+    [
+     "2026-10-23",
+     704.4
+    ],
+    [
+     "2026-10-26",
+     712.2
+    ],
+    [
+     "2026-10-27",
+     721.25
+    ],
+    [
+     "2026-10-28",
+     725.61
+    ],
+    [
+     "2026-10-29",
+     715.34
+    ],
+    [
+     "2026-10-30",
+     690.49
+    ],
+    [
+     "2026-11-02",
+     681.09
+    ],
+    [
+     "2026-11-03",
+     685.28
+    ],
+    [
+     "2026-11-04",
+     691.95
+    ],
+    [
+     "2026-11-05",
+     653.19
+    ]
+   ]
+  },
+  {
+   "type": "list",
+   "say": "And the biggest names are getting crushed. Tesla, down almost eleven percent. Broadcom, almost nine. Nvidia, more than eight. And Meta, almost six.",
+   "title": "HIT HARDEST · 10:56 AM ET",
+   "rows": [
+    {
+     "who": "Tesla",
+     "ticker": "TSLA",
+     "side": "DOWN",
+     "range": "−10.8%",
+     "dates": "$385.19 → $343.70",
+     "cue": "Tesla"
+    },
+    {
+     "who": "Broadcom",
+     "ticker": "AVGO",
+     "side": "DOWN",
+     "range": "−8.8%",
+     "dates": "$325.48 → $296.77",
+     "cue": "Broadcom"
+    },
+    {
+     "who": "Nvidia",
+     "ticker": "NVDA",
+     "side": "DOWN",
+     "range": "−8.3%",
+     "dates": "$200.13 → $183.60",
+     "cue": "Nvidia"
+    },
+    {
+     "who": "Meta",
+     "ticker": "META",
+     "side": "DOWN",
+     "range": "−5.9%",
+     "dates": "$630.00 → $592.77",
+     "cue": "Meta"
+    }
+   ]
+  },
+  {
+   "type": "outro",
+   "say": "These are live prices from ten fifty six Eastern, and they'll change by the close. This isn't financial advice. Did today's drop catch you off guard? Tell me in the comments, and subscribe for the biggest moves, every day.",
+   "notes": [
+    "Prices as of 10:56 AM ET; they'll change by the close",
+    "One-day moves don't predict the next day",
+    "Not financial advice"
+   ],
+   "cta": "SUBSCRIBE FOR DAILY MARKET MOVERS",
+   "cta_cue": "subscribe",
+   "credits": "Prices: Robinhood  ·  ETFs QQQ, SPY, IWM, DIA  ·  Nov 5, 2026, 10:56 AM ET"
+  }
+ ],
+ "post": {
+  "title": "The Nasdaq Is Down 5.6% This Morning 📉",
+  "description": "The Nasdaq 100 (QQQ) was down 5.6% at 10:56 am ET on Thursday, Nov 5. The S&P 500 (SPY) was down 3.3%, small caps (IWM) 2.8%, and the Dow (DIA) 2.3%.\n\nHit hardest (as of 10:56 am ET):\n📉 Tesla (TSLA) −10.8%\n📉 Broadcom (AVGO) −8.8%\n📉 Nvidia (NVDA) −8.3%\n📉 Meta (META) −5.9%\n\nQQQ is now 14.0% below its Oct 6 close.\n\nDid today's drop catch you off guard? Tell me in the comments.\nSubscribe for the market's biggest moves every trading day.\n\nPrices are live as of 10:56 am ET and will change by the close. Data: Robinhood (index ETFs shown). Narrated with an AI voice. Not financial advice.",
+  "hashtags": [
+   "#stocks",
+   "#stockmarket",
+   "#nasdaq",
+   "#selloff",
+   "#investing"
+  ]
+ }
+}
