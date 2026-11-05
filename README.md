@@ -111,7 +111,7 @@ Each of these needs its API host allowed in this environment's network settings,
 
 ## Posting
 
-**Daily Movers posts itself to YouTube once Postiz is connected.** Each weekday run:
+**Auto-posting is paused for now.** The daily run sends you each video with a ready-to-paste title and description, and you post it. When it's switched on, Daily Movers posts itself to YouTube once Postiz is connected. Each weekday run:
 1. Checks every number against official closes.
 2. Renders the video and checks its frames, captions and QA report (`out/<slug>-qa.json`).
 3. Schedules the Short on YouTube for 7:00 pm ET with `tools/publish.py`.

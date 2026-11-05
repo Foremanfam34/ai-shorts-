@@ -6,6 +6,8 @@ Each weekday after the close, make one Stock Geek "Daily Movers" Short and check
 
 **Never post anywhere except YouTube. Never post a video that failed a check.**
 
+> **Auto-posting is paused** (the owner's call, Nov 5). Skip step 7 and leave every video for the owner to post, until they say to turn it back on.
+
 ## 0. Setup
 - Work in `/home/user/ai-shorts-` (the `Foremanfam34/ai-shorts-` repo) and run `git pull`.
 - If `models/` is missing, run `./setup.sh`. It downloads about 1.5 GB of voice and transcription models and installs the `postiz` CLI.
@@ -47,6 +49,17 @@ Each weekday after the close, make one Stock Geek "Daily Movers" Short and check
 - Copy the newest file in `movers/episodes/` to `movers/episodes/YYYY-MM-DD.json` and edit it. Keep the voice settings (`am_michael`, speed 1.1, pause_scale 0.8), the `caption_fix` entries, `music: groove`, and the `slug` pattern `market-movers-YYYY-MM-DD`.
 - In `say` lines, spell numbers out ("fourteen percent") and say the weekday ("on Thursday") rather than "today", so the video still reads right the next morning.
 - On screen, use the date ("NOV 5") rather than "TODAY".
+- **Post text** (`post` in the episode). `movers/episodes/2026-11-04.json` is the model to follow.
+  - `title`: the hook, 60 characters or less, e.g. "Datadog Beat Earnings… and Still Fell 14% 📉". Never promise a reason ("why…") the video doesn't give.
+  - `description`, in this order:
+    1. One or two sentences with the headline fact.
+    2. "Thursday's big movers:" (use the right weekday), then one line per stock in on-screen order: `📈 Name (TICKER) +x.x%`.
+    3. "After the bell (as of h:mm pm ET):", then each after-hours stock with its EPS vs expected.
+    4. "S&P 500 (SPY): ±x.x%".
+    5. The outro's comment question, then "Subscribe for the market's biggest moves every trading day."
+    6. "After-hours prices can change by the open. Data: Robinhood. Narrated with an AI voice. Not financial advice."
+  - `hashtags`: five tags: #stocks #stockmarket #earnings, the headline company, then #investing.
+  - Every number in the description must match the video.
 - Re-check every number in the file against your verified data with a quick Python script before rendering.
 
 ## 5. Render and check
@@ -91,7 +104,7 @@ What to do with the result:
 
 ## 8. Save and report
 - Commit the episode JSON and `publish/log.jsonl` (if it changed), using the commit attribution lines, and push to `main`.
-- Send the owner the MP4 with a one-line summary of the story, then one of:
+- Send the owner the MP4 with a one-line summary of the story. Add the YouTube title and the full description (hashtags at the end), each in its own code block so it's easy to copy on a phone. Then one of:
   - "Goes live on YouTube at 7:00 PM ET. Reply **hold** to stop it."
   - "Ready for you to post. It's in the dashboard." Add the reason it wasn't auto-posted.
 - **Fridays:** compare views on the week's posts (`status --days 7 --views`). In `movers/LEARNINGS.md`, add three lines: which hook style did best, which did worst, and what to try next week. Read that file before you write each hook.
