@@ -94,15 +94,4 @@ The dashboard is https://claude.ai/artifact/PkXcf4fxhp49R6wgKxe8mH.
 - Send the owner the MP4 with a one-line summary. Add the YouTube title and the full description (hashtags at the end), each in its own code block, then "Ready for you to post. It's in the dashboard."
 
 ## Leads
-- **Nov 6: Pelosi × Bloom Energy (BE).** Her filings show eight BE buys, all disclosed Aug 24. Together that's $6M–$24M.
-
-  | Date | Shares | Options |
-  |---|---|---|
-  | Jul 23 | $1M–$5M | $1M–$5M |
-  | Jul 24 | $1M–$5M | $1M–$5M |
-  | Jul 27 | $500K–$1M | $500K–$1M |
-  | Jul 28 | $500K–$1M | $500K–$1M |
-
-  - **Closes:** Jul 23 $217.30, Jul 24 $184.89, Jul 27 $188.18, Jul 28 $166.84. Highest close since: $295.78 on Oct 6. Nov 4: $200.40.
-  - **Nov 5:** BE was down about 21% intraday at 10:51 am ET. There was no earnings report that day (its last was Oct 22), so give no reason. Use the official Nov 5 close.
-  - **Caution:** BE reported Q2 earnings on Jul 28 after the close. Do not mention the buys' timing relative to that report.
+None right now. To add one, write `- **<date>: <who> × <company> (<ticker>).**` and follow it with the trades, the closes and any caution.

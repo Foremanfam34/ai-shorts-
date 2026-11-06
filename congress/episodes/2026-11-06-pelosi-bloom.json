@@ -1,0 +1,457 @@
+{
+ "id": "2026-11-06-pelosi-bloom",
+ "format": "spotlight",
+ "series": "CONGRESS TRADES",
+ "badge": "SPOTLIGHT",
+ "week_label": "Nov 6, 2026",
+ "source_line": "Source: STOCK Act disclosures via Tip Ranks",
+ "voice": "am_michael",
+ "speed": 1.1,
+ "say_as": {},
+ "natural": true,
+ "voice_fx": true,
+ "music": "groove",
+ "pause_scale": 0.8,
+ "scenes": [
+  {
+   "type": "hook",
+   "say": "Nancy Pelosi's filings show up to twenty four million dollars of Bloom Energy buys... and on Thursday, Bloom fell sixteen percent. In one day.",
+   "line1": "PELOSI'S FILINGS SHOW",
+   "big_text": "$6M–$24M",
+   "line2": "OF BLOOM ENERGY BUYS",
+   "pill": "NOV 5: -16.4% IN ONE DAY",
+   "pill_cue": "fell"
+  },
+  {
+   "type": "trades",
+   "say": "Her filings list shares and options on four days in late July, all disclosed August twenty fourth.",
+   "who": "REP. NANCY PELOSI (D)",
+   "sub": "8 buys  ·  Disclosed Aug 24",
+   "rows": [
+    {
+     "ticker": "BE",
+     "name": "Jul 23 · Shares",
+     "side": "BUY",
+     "range": "$1M–$5M"
+    },
+    {
+     "ticker": "BE",
+     "name": "Jul 23 · Options",
+     "side": "BUY",
+     "range": "$1M–$5M"
+    },
+    {
+     "ticker": "BE",
+     "name": "Jul 24 · Shares",
+     "side": "BUY",
+     "range": "$1M–$5M"
+    },
+    {
+     "ticker": "BE",
+     "name": "Jul 24 · Options",
+     "side": "BUY",
+     "range": "$1M–$5M"
+    },
+    {
+     "ticker": "BE",
+     "name": "Jul 27 · Shares",
+     "side": "BUY",
+     "range": "$500K–$1M"
+    },
+    {
+     "ticker": "BE",
+     "name": "Jul 27 · Options",
+     "side": "BUY",
+     "range": "$500K–$1M"
+    },
+    {
+     "ticker": "BE",
+     "name": "Jul 28 · Shares",
+     "side": "BUY",
+     "range": "$500K–$1M"
+    },
+    {
+     "ticker": "BE",
+     "name": "Jul 28 · Options",
+     "side": "BUY",
+     "range": "$500K–$1M"
+    }
+   ]
+  },
+  {
+   "type": "chart",
+   "say": "Now look at Bloom since then. It ran as high as two hundred ninety six dollars in October... then it slid, and on Thursday it plunged. It's now forty three percent below that October high.",
+   "who": "BLOOM ENERGY (BE)",
+   "sub": "Daily close, Jul 15 → Nov 5",
+   "markers": [
+    {
+     "date": "2026-07-23",
+     "label": "JULY BUYS"
+    },
+    {
+     "date": "2026-10-06",
+     "label": "OCT 6 HIGH"
+    }
+   ],
+   "drop": {
+    "date": "2026-11-05",
+    "label": "-16.4% ON NOV 5",
+    "cue": "plunged"
+   },
+   "stat": {
+    "value": "-43.4%",
+    "label": "below its Oct 6 close",
+    "cue": "below"
+   },
+   "series": [
+    [
+     "2026-07-15",
+     239.38
+    ],
+    [
+     "2026-07-16",
+     206.73
+    ],
+    [
+     "2026-07-17",
+     214.96
+    ],
+    [
+     "2026-07-20",
+     197.06
+    ],
+    [
+     "2026-07-21",
+     226.26
+    ],
+    [
+     "2026-07-22",
+     218.22
+    ],
+    [
+     "2026-07-23",
+     217.3
+    ],
+    [
+     "2026-07-24",
+     184.89
+    ],
+    [
+     "2026-07-27",
+     188.18
+    ],
+    [
+     "2026-07-28",
+     166.84
+    ],
+    [
+     "2026-07-29",
+     163.75
+    ],
+    [
+     "2026-07-30",
+     207.12
+    ],
+    [
+     "2026-07-31",
+     205.81
+    ],
+    [
+     "2026-08-03",
+     218.32
+    ],
+    [
+     "2026-08-04",
+     228.11
+    ],
+    [
+     "2026-08-05",
+     234.33
+    ],
+    [
+     "2026-08-06",
+     228.96
+    ],
+    [
+     "2026-08-07",
+     219.34
+    ],
+    [
+     "2026-08-10",
+     210.63
+    ],
+    [
+     "2026-08-11",
+     211.21
+    ],
+    [
+     "2026-08-12",
+     237.16
+    ],
+    [
+     "2026-08-13",
+     236.22
+    ],
+    [
+     "2026-08-14",
+     229.94
+    ],
+    [
+     "2026-08-17",
+     232.16
+    ],
+    [
+     "2026-08-18",
+     209.01
+    ],
+    [
+     "2026-08-19",
+     206.63
+    ],
+    [
+     "2026-08-20",
+     202.48
+    ],
+    [
+     "2026-08-21",
+     201.45
+    ],
+    [
+     "2026-08-24",
+     204.02
+    ],
+    [
+     "2026-08-25",
+     217.45
+    ],
+    [
+     "2026-08-26",
+     218.21
+    ],
+    [
+     "2026-08-27",
+     217.83
+    ],
+    [
+     "2026-08-28",
+     210.77
+    ],
+    [
+     "2026-08-31",
+     206.3
+    ],
+    [
+     "2026-09-01",
+     213.63
+    ],
+    [
+     "2026-09-02",
+     217.28
+    ],
+    [
+     "2026-09-03",
+     235.55
+    ],
+    [
+     "2026-09-04",
+     252.87
+    ],
+    [
+     "2026-09-08",
+     277.22
+    ],
+    [
+     "2026-09-09",
+     269.28
+    ],
+    [
+     "2026-09-10",
+     258.49
+    ],
+    [
+     "2026-09-11",
+     275.75
+    ],
+    [
+     "2026-09-14",
+     257.05
+    ],
+    [
+     "2026-09-15",
+     259.35
+    ],
+    [
+     "2026-09-16",
+     270.02
+    ],
+    [
+     "2026-09-17",
+     280.76
+    ],
+    [
+     "2026-09-18",
+     265.63
+    ],
+    [
+     "2026-09-21",
+     272.89
+    ],
+    [
+     "2026-09-22",
+     276.53
+    ],
+    [
+     "2026-09-23",
+     275.19
+    ],
+    [
+     "2026-09-24",
+     266.65
+    ],
+    [
+     "2026-09-25",
+     288.7
+    ],
+    [
+     "2026-09-28",
+     262.87
+    ],
+    [
+     "2026-09-29",
+     291.25
+    ],
+    [
+     "2026-09-30",
+     276.98
+    ],
+    [
+     "2026-10-01",
+     277.58
+    ],
+    [
+     "2026-10-02",
+     289.15
+    ],
+    [
+     "2026-10-05",
+     286.65
+    ],
+    [
+     "2026-10-06",
+     295.78
+    ],
+    [
+     "2026-10-07",
+     291.29
+    ],
+    [
+     "2026-10-08",
+     272.82
+    ],
+    [
+     "2026-10-09",
+     280.5
+    ],
+    [
+     "2026-10-12",
+     262.28
+    ],
+    [
+     "2026-10-13",
+     263.45
+    ],
+    [
+     "2026-10-14",
+     239.34
+    ],
+    [
+     "2026-10-15",
+     236.3
+    ],
+    [
+     "2026-10-16",
+     221.31
+    ],
+    [
+     "2026-10-19",
+     226.22
+    ],
+    [
+     "2026-10-20",
+     222.65
+    ],
+    [
+     "2026-10-21",
+     238.53
+    ],
+    [
+     "2026-10-22",
+     217.77
+    ],
+    [
+     "2026-10-23",
+     193.3
+    ],
+    [
+     "2026-10-26",
+     203.92
+    ],
+    [
+     "2026-10-27",
+     218.5
+    ],
+    [
+     "2026-10-28",
+     228.08
+    ],
+    [
+     "2026-10-29",
+     222.3
+    ],
+    [
+     "2026-10-30",
+     203.17
+    ],
+    [
+     "2026-11-02",
+     196.25
+    ],
+    [
+     "2026-11-03",
+     214.01
+    ],
+    [
+     "2026-11-04",
+     200.4
+    ],
+    [
+     "2026-11-05",
+     167.52
+    ]
+   ]
+  },
+  {
+   "type": "outro",
+   "say": "So, does she still hold it? We don't actually know. Filings can lag up to forty five days, this isn't evidence of wrongdoing, and it isn't financial advice. Would you have held? Tell me in the comments, and subscribe for a new one every weekday.",
+   "notes": [
+    "Positions may have changed since these filings",
+    "Disclosures can lag trades by up to 45 days",
+    "Not financial advice · Not evidence of wrongdoing"
+   ],
+   "cta": "SUBSCRIBE FOR DAILY CONGRESS TRADES",
+   "cta_cue": "subscribe",
+   "credits": "Trades: Tip Ranks (STOCK Act filings)  ·  Prices: Robinhood"
+  }
+ ],
+ "post": {
+  "title": "Pelosi's Bloom Energy buys vs. Bloom's 16% one-day drop",
+  "description": "Rep. Nancy Pelosi's STOCK Act filings show eight Bloom Energy (BE) buys in late July, worth $6M–$24M in total.\n\nJul 23 · Shares · BUY · $1M–$5M\nJul 23 · Options · BUY · $1M–$5M\nJul 24 · Shares · BUY · $1M–$5M\nJul 24 · Options · BUY · $1M–$5M\nJul 27 · Shares · BUY · $500K–$1M\nJul 27 · Options · BUY · $500K–$1M\nJul 28 · Shares · BUY · $500K–$1M\nJul 28 · Options · BUY · $500K–$1M\n\nDisclosed Aug 24.\n\nSince then, Bloom's highest close was $295.78 on Oct 6. On Thursday, Nov 5, it fell 16.4% to close at $167.52, 43.4% below that Oct 6 close.\n\nWould you have held? Tell me in the comments.\nSubscribe for a new Congress trade every weekday.\n\nSource: STOCK Act filings via Tip Ranks; prices via Robinhood. Amounts are disclosed ranges. Narrated with an AI voice. Not financial advice and not an allegation of wrongdoing.",
+  "hashtags": [
+   "#congresstrades",
+   "#stocks",
+   "#stockmarket",
+   "#pelosi",
+   "#bloomenergy"
+  ]
+ }
+}

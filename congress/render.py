@@ -219,7 +219,8 @@ def side_color(side):
 
 def draw_trades(img, d, sc, t, dur):
     scene_title(d, t, sc["who"], sc["sub"])
-    top, rh, gap = 520, 112, 16
+    # up to six rows at full size; seven or eight get tighter rows so they still end above the captions
+    top, rh, gap = (520, 112, 16) if len(sc["rows"]) <= 6 else (500, 88, 12)
     emph = sc["_emph"]  # when each row's name is spoken (None = not heard)
     heard = [i for i, e in enumerate(emph) if e is not None and e <= t]
     active = max(heard, key=lambda i: emph[i]) if heard else None
