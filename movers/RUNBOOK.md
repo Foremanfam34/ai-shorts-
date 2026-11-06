@@ -32,12 +32,15 @@ Each weekday after the close, make one Stock Geek "Daily Movers" Short and check
   The scanner's daily candles roll over late in the evening. Until then, `close(candleCount=1, …)` is still yesterday's close, so a candle-to-candle expression shows yesterday's moves. If the expression above returns nothing (it can late at night), use `close(candleCount=1, candlePeriod="1d", session="regular") / close(candleCount=2, candlePeriod="1d", session="regular") - 1` instead.
 - **Verify every stock you'll show** with `get_equity_quotes`, then recompute every % yourself:
   - **Previous close:** `quote.adjusted_previous_close`, the official close. The scanner's candle close can be off by cents to dimes.
-  - **Today's close:** `close.price` if `close.date` is today. Otherwise use `quote.last_trade_price` when `venue_last_trade_time` is today at 3:59 pm ET or later; that's the final regular-session trade. Say which one you used in the dashboard row's `notes`.
+  - **Today's close:** official only. Take it from today's day bar: `get_equity_historicals`, interval `day`, start today at 00:00Z, no end time. That bar appears after 7 pm ET, and its close is the official close. `close.price` also works once `close.date` is today, but that can take until the next morning.
+  - **Never use `quote.last_trade_price` as the close.** It misses the closing auction: on Nov 5 AMD's last trade was $402.51, but its official close was $404.40.
+  - If today's bar isn't there yet, wait for it. Don't publish with provisional numbers.
   - **Chart history:** `get_equity_historicals` day bars. Ignore bars marked `interpolated: true`.
 - **After the bell:**
   - Run `get_earnings_calendar` for today with `filter: high_market_cap` and keep the `pm` reporters.
   - Scan only those names: expression `symbol` `ANY_OF` [their tickers], market cap `> 10000000000`, and expression `tradeAllDay.price / price(session="regular") - 1` `OUTSIDE ["-0.05","0.05"]`.
-  - Confirm the picks with quotes. The after-hours % is `last_non_reg_trade_price` against today's close. Record the quote time.
+  - Confirm the picks with quotes. The after-hours % is `last_non_reg_trade_price` against today's official close. Record the quote time.
+  - On Fridays there are usually no big after-hours reports. Use the list scene for something else that's verified, such as a two-day scorecard.
 - **Why it moved:** use `get_earnings_results` for each featured stock (report date, EPS actual vs estimate). If you can't verify a reason, **give none**. Never guess at news, and never imply wrongdoing.
 - **Market context:** SPY today vs the previous close, labelled "S&P 500 (SPY)".
 

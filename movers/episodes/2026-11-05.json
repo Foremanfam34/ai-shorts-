@@ -18,7 +18,7 @@
  },
  "post": {
   "title": "AppLovin Soared 31% as the Nasdaq Plunged 6% 📈",
-  "description": "AppLovin (APP) jumped 31.1% on Thursday, Nov 5, the day after beating earnings ($4.30 a share vs $4.01 expected), while the Nasdaq 100 (QQQ) fell 6.4%. It's now up 56% in four trading days.\n\nThursday's big movers:\n📈 AppLovin (APP) +31.1%\n📈 Unity (U) +15.0%\n📉 Sandisk (SNDK) −22.3%\n📉 AMD −17.7%\n📉 Micron (MU) −17.2%\n📉 Nvidia (NVDA) −9.3%\n\nAfter the bell (as of 5:19 pm ET):\n📈 Cloudflare (NET) +14.8%, EPS $0.38 vs $0.28 expected\n📈 Airbnb (ABNB) +10.6%, EPS $3.16 vs $2.85 expected\n📉 DraftKings (DKNG) −21.7%, EPS −$0.53 vs −$0.26 expected\n\nS&P 500 (SPY): −4.4% · Nasdaq 100 (QQQ): −6.4% · Dow (DIA): −3.5%\n\nWhich move would you have traded? Tell me in the comments.\nSubscribe for the market's biggest moves every trading day.\n\nAfter-hours prices can change by the open. Data: Robinhood. Narrated with an AI voice. Not financial advice.",
+  "description": "AppLovin (APP) jumped 31.0% on Thursday, Nov 5, the day after beating earnings ($4.30 a share vs $4.01 expected), while the Nasdaq 100 (QQQ) fell 6.5%. It's now up 56% in four trading days.\n\nThursday's big movers:\n📈 AppLovin (APP) +31.0%\n📈 Unity (U) +14.9%\n📉 Sandisk (SNDK) −22.3%\n📉 AMD −17.3%\n📉 Micron (MU) −17.5%\n📉 Nvidia (NVDA) −9.3%\n\nAfter the bell (as of 5:19 pm ET):\n📈 Cloudflare (NET) +15.2%, EPS $0.38 vs $0.28 expected\n📈 Airbnb (ABNB) +9.9%, EPS $3.16 vs $2.85 expected\n📉 DraftKings (DKNG) −21.6%, EPS −$0.53 vs −$0.26 expected\n\nS&P 500 (SPY): −4.4% · Nasdaq 100 (QQQ): −6.5% · Dow (DIA): −3.5%\n\nWhich move would you have traded? Tell me in the comments.\nSubscribe for the market's biggest moves every trading day.\n\nAfter-hours prices can change by the open. Data: Robinhood (official closes). Narrated with an AI voice. Not financial advice.",
   "hashtags": [
    "#stocks",
    "#stockmarket",
@@ -32,52 +32,52 @@
    "type": "hook",
    "say": "AppLovin jumped thirty one percent on Thursday... on a day the Nasdaq plunged more than six.",
    "line1": "APPLOVIN (APP) · NOV 5",
-   "big_text": "+31.1%",
+   "big_text": "+31.0%",
    "big_color": "green",
    "line2": "THE DAY AFTER ITS EARNINGS",
-   "pill": "NASDAQ 100 −6.4% · S&P 500 −4.4%",
+   "pill": "NASDAQ 100 −6.5% · S&P 500 −4.4%",
    "pill_color": "red",
    "pill_cue": "plunged"
   },
   {
    "type": "bars",
-   "say": "Unity rose fifteen percent after its earnings. But chip stocks got crushed. Sandisk fell twenty two, AMD almost eighteen, Micron seventeen, and Nvidia more than nine.",
+   "say": "Unity rose fifteen percent after its earnings. But chip stocks got crushed. Sandisk fell twenty two, AMD more than seventeen, Micron more than seventeen, and Nvidia more than nine.",
    "title": "BIG MOVES · NOV 5",
    "sub": "Nov 5 vs Nov 4 close  ·  companies worth $15B+",
    "rows": [
     {
      "ticker": "APP",
      "from": 271.75,
-     "to": 356.36
+     "to": 356.1
     },
     {
      "ticker": "U",
      "from": 42.46,
-     "to": 48.845,
+     "to": 48.8,
      "cue": "Unity"
     },
     {
      "ticker": "SNDK",
      "from": 1037.4,
-     "to": 806.38,
+     "to": 806.43,
      "cue": "Sandisk"
     },
     {
      "ticker": "AMD",
      "from": 488.78,
-     "to": 402.51,
+     "to": 404.4,
      "cue": "AMD"
     },
     {
      "ticker": "MU",
      "from": 795.23,
-     "to": 658.36,
+     "to": 656.39,
      "cue": "Micron"
     },
     {
      "ticker": "NVDA",
      "from": 200.13,
-     "to": 181.59,
+     "to": 181.6,
      "cue": "Nvidia"
     }
    ]
@@ -238,7 +238,7 @@
     ],
     [
      "2026-11-05",
-     356.36
+     356.1
     ]
    ],
    "markers": [
@@ -249,25 +249,25 @@
    ],
    "drop": {
     "date": "2026-11-05",
-    "label": "+31.1% ON NOV 5",
+    "label": "+31.0% ON NOV 5",
     "cue": "wilder"
    },
    "stat": {
-    "value": "+56.0%",
+    "value": "+55.8%",
     "label": "in four trading days",
     "cue": "up"
    }
   },
   {
    "type": "list",
-   "say": "After the bell, Cloudflare jumped almost fifteen percent and Airbnb more than ten, both beating estimates. DraftKings missed... and fell almost twenty two percent.",
+   "say": "After the bell, Cloudflare jumped fifteen percent and Airbnb almost ten, both beating estimates. DraftKings missed... and fell almost twenty two percent.",
    "title": "AFTER THE BELL · 5:19 PM ET",
    "rows": [
     {
      "who": "Cloudflare",
      "ticker": "NET",
      "side": "UP",
-     "range": "+14.8%",
+     "range": "+15.2%",
      "dates": "After hours · EPS $0.38 vs $0.28 expected",
      "cue": "Cloudflare"
     },
@@ -275,7 +275,7 @@
      "who": "Airbnb",
      "ticker": "ABNB",
      "side": "UP",
-     "range": "+10.6%",
+     "range": "+9.9%",
      "dates": "After hours · EPS $3.16 vs $2.85 expected",
      "cue": "Airbnb"
     },
@@ -283,7 +283,7 @@
      "who": "DraftKings",
      "ticker": "DKNG",
      "side": "DOWN",
-     "range": "−21.7%",
+     "range": "−21.6%",
      "dates": "After hours · EPS −$0.53 vs −$0.26 expected",
      "cue": "DraftKings"
     }
