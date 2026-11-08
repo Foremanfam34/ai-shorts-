@@ -35,6 +35,12 @@ Each weekday after the close, make one Stock Geek "Daily Movers" Short and check
   - **Today's close:** official only. Take it from today's day bar: `get_equity_historicals`, interval `day`, start today at 00:00Z, no end time. That bar appears after 7 pm ET, and its close is the official close. `close.price` also works once `close.date` is today, but that can take until the next morning.
   - **Never use `quote.last_trade_price` as the close.** It misses the closing auction: on Nov 5 AMD's last trade was $402.51, but its official close was $404.40.
   - If today's bar isn't there yet, wait for it. Don't publish with provisional numbers.
+  - **If some of today's bars are still missing** (normal: on Nov 6, only 5 of 13 were out by 9:46 pm, and all of them by 7:30 am the next day):
+    1. Finish everything that doesn't depend on them: the story, the narration draft, the earnings checks, and the after-hours numbers with their time.
+    2. Schedule a follow-up check with `send_later` at the next of these times: 7:05 pm, 8:15 pm, 9:45 pm, then 7:30 am the next day. Give it the missing tickers and the closes you already have.
+    3. At each check, fetch only the missing bars. Once every close is official, render, check, publish and send. Otherwise schedule the next check.
+    4. Tell the owner in one line when the video will be late.
+  - **Keeping info current:** if official closes later differ from anything already sent (a rounding change counts), re-render, replace the dashboard video and post text, and tell the owner exactly what changed.
   - **Chart history:** `get_equity_historicals` day bars. Ignore bars marked `interpolated: true`.
 - **After the bell:**
   - Run `get_earnings_calendar` for today with `filter: high_market_cap` and keep the `pm` reporters.
