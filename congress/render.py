@@ -193,8 +193,8 @@ def draw_hook(img, d, sc, t, dur):
     fb = fit(final, "Black", 160, 960)
     grow = 1 + 0.05 * prog(t, 0, dur) + 0.07 * np.sin(np.pi * prog(t, 0.2, 0.45))
     text(d, (W // 2, 790), final, F("Black", fb.size * grow), COLORS[sc.get("big_color", "yellow")], 1.0, "mm")
-    if sc.get("line2"):
-        text(d, (W // 2, 990), sc["line2"], f1, TEXT, 1.0, "mm")
+    if sc.get("line2"):  # same size as line1 unless it needs to shrink to fit
+        text(d, (W // 2, 990), sc["line2"], fit(sc["line2"], "ExtraBold", f1.size, 940), TEXT, 1.0, "mm")
     if sc.get("pill"):
         label = minus(sc["pill"])
         tp = cue(sc, sc.get("pill_cue"), dur * 0.7)
@@ -299,6 +299,8 @@ def x_ticks(dates, marker_idx, width=820):
         x = width * i / (len(ds) - 1)
         if not out or x - out[-1][2] >= 110:
             out.append((i, lab, x))
+        elif i == len(ds) - 1 and len(out) > 1:
+            out[-1] = (i, lab, x)  # always label the last day; drop the tick crowding it
     return [(i, lab) for i, lab, _ in out]
 
 
