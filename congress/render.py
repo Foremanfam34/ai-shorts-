@@ -672,7 +672,8 @@ def render_video(ep, total, wav, ass, out_mp4):
         if fl > 0:
             d.rectangle((0, 0, W, H), fill=(255, 255, 255, int(255 * fl)))
         d.rectangle((0, 0, W * T / total, 8), fill=YELLOW + (255,))
-        if cover is None and sc["type"] == "hook" and t >= cue(sc, sc.get("pill_cue"), 2.0) + 0.8:
+        # cover: shortly after the pill lands, but never later than the end of the hook
+        if cover is None and sc["type"] == "hook" and t >= min(cue(sc, sc.get("pill_cue"), 2.0) + 0.8, sc["_dur"] - 0.25):
             cover = img.copy()
         ff.stdin.write(img.tobytes())
         if fi % 150 == 0:

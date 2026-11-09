@@ -1,0 +1,306 @@
+{
+ "id": "2026-11-09",
+ "series": "CONGRESS TRADES",
+ "week_label": "Disclosed Nov 2–8, 2026",
+ "source_line": "Source: STOCK Act disclosures via Tip Ranks",
+ "voice": "am_michael",
+ "speed": 1.1,
+ "say_as": {
+  "Capito": "Cap ih toe",
+  "Zoetis": "Zo eh tiss"
+ },
+ "format": "weekly",
+ "natural": true,
+ "voice_fx": true,
+ "music": "groove",
+ "pause_scale": 0.8,
+ "badge": "WEEKLY",
+ "scenes": [
+  {
+   "type": "hook",
+   "say": "A congresswoman's filing shows an Nvidia buy on October twenty third... and Nvidia is down more than eleven percent since.",
+   "line1": "NVIDIA SINCE REP. SALAZAR'S BUY",
+   "big_text": "-11.5%",
+   "big_color": "red",
+   "line2": "BOUGHT OCT 23 · DISCLOSED NOV 5",
+   "pill": "AMOUNT: $1K–$15K",
+   "pill_cue": "since"
+  },
+  {
+   "type": "trades",
+   "say": "Representative Maria Elvira Salazar's filing shows three trades that day. She bought Nvidia, sold Cisco, and bought Procter and Gamble, each up to fifteen thousand dollars.",
+   "who": "REP. MARIA ELVIRA SALAZAR (R)",
+   "sub": "Traded Oct 23  ·  Disclosed Nov 5",
+   "rows": [
+    {
+     "ticker": "NVDA",
+     "name": "Nvidia",
+     "side": "BUY",
+     "range": "$1K–$15K",
+     "cue": "Nvidia"
+    },
+    {
+     "ticker": "CSCO",
+     "name": "Cisco",
+     "side": "SELL",
+     "range": "$1K–$15K",
+     "cue": "Cisco"
+    },
+    {
+     "ticker": "PG",
+     "name": "Procter & Gamble",
+     "side": "BUY",
+     "range": "$1K–$15K",
+     "cue": "Procter"
+    }
+   ]
+  },
+  {
+   "type": "bars",
+   "say": "So how did those do? Nvidia is down more than eleven percent. Cisco, almost twelve. And Procter and Gamble is up almost three.",
+   "title": "SINCE THOSE TRADES",
+   "sub": "Share price, Oct 23 close → Nov 6 close",
+   "from": "2026-10-23",
+   "to": "2026-11-06",
+   "rows": [
+    {
+     "ticker": "NVDA",
+     "from": 210.96,
+     "to": 186.64,
+     "cue": "Nvidia"
+    },
+    {
+     "ticker": "CSCO",
+     "from": 106.5,
+     "to": 93.85,
+     "cue": "Cisco"
+    },
+    {
+     "ticker": "PG",
+     "from": 161.02,
+     "to": 165.4,
+     "cue": "Procter"
+    }
+   ]
+  },
+  {
+   "type": "chart",
+   "say": "Here's Nvidia since that buy. On November fifth... it dropped nine percent in one day.",
+   "who": "NVIDIA (NVDA)",
+   "sub": "Rep. Salazar's buy: Oct 23  ·  $1K–$15K",
+   "ticker": "NVDA",
+   "markers": [
+    {
+     "date": "2026-10-23",
+     "label": "SALAZAR BUYS",
+     "cue": "buy"
+    }
+   ],
+   "drop": {
+    "date": "2026-11-05",
+    "label": "-9.3% IN ONE DAY",
+    "cue": "dropped"
+   },
+   "series": [
+    [
+     "2026-09-22",
+     228.87
+    ],
+    [
+     "2026-09-23",
+     225.51
+    ],
+    [
+     "2026-09-24",
+     224.58
+    ],
+    [
+     "2026-09-25",
+     225.07
+    ],
+    [
+     "2026-09-28",
+     228.86
+    ],
+    [
+     "2026-09-29",
+     227.21
+    ],
+    [
+     "2026-09-30",
+     228.38
+    ],
+    [
+     "2026-10-01",
+     230.86
+    ],
+    [
+     "2026-10-02",
+     233.95
+    ],
+    [
+     "2026-10-05",
+     238.9
+    ],
+    [
+     "2026-10-06",
+     239.24
+    ],
+    [
+     "2026-10-07",
+     237.47
+    ],
+    [
+     "2026-10-08",
+     230.48
+    ],
+    [
+     "2026-10-09",
+     229.28
+    ],
+    [
+     "2026-10-12",
+     226.32
+    ],
+    [
+     "2026-10-13",
+     228.52
+    ],
+    [
+     "2026-10-14",
+     221.3
+    ],
+    [
+     "2026-10-15",
+     217.23
+    ],
+    [
+     "2026-10-16",
+     214.13
+    ],
+    [
+     "2026-10-19",
+     217.09
+    ],
+    [
+     "2026-10-20",
+     216.47
+    ],
+    [
+     "2026-10-21",
+     221.97
+    ],
+    [
+     "2026-10-22",
+     212.21
+    ],
+    [
+     "2026-10-23",
+     210.96
+    ],
+    [
+     "2026-10-26",
+     216.0
+    ],
+    [
+     "2026-10-27",
+     217.94
+    ],
+    [
+     "2026-10-28",
+     215.38
+    ],
+    [
+     "2026-10-29",
+     213.66
+    ],
+    [
+     "2026-10-30",
+     204.64
+    ],
+    [
+     "2026-11-02",
+     202.06
+    ],
+    [
+     "2026-11-03",
+     206.69
+    ],
+    [
+     "2026-11-04",
+     200.13
+    ],
+    [
+     "2026-11-05",
+     181.6
+    ],
+    [
+     "2026-11-06",
+     186.64
+    ]
+   ]
+  },
+  {
+   "type": "list",
+   "say": "Also disclosed: Senator Shelley Moore Capito's filing shows four sales on October twenty first. Apple, Microsoft, Meta, and Zoetis, each up to fifteen thousand dollars.",
+   "title": "ALSO DISCLOSED",
+   "rows": [
+    {
+     "who": "Sen. Shelley Moore Capito (R)",
+     "ticker": "AAPL",
+     "side": "SELL",
+     "range": "$1K–$15K",
+     "dates": "Traded Oct 21 · Disclosed Nov 5",
+     "cue": "Apple"
+    },
+    {
+     "who": "Sen. Shelley Moore Capito (R)",
+     "ticker": "MSFT",
+     "side": "SELL",
+     "range": "$1K–$15K",
+     "dates": "Traded Oct 21 · Disclosed Nov 5",
+     "cue": "Microsoft"
+    },
+    {
+     "who": "Sen. Shelley Moore Capito (R)",
+     "ticker": "META",
+     "side": "SELL",
+     "range": "$1K–$15K",
+     "dates": "Traded Oct 21 · Disclosed Nov 5",
+     "cue": "Meta"
+    },
+    {
+     "who": "Sen. Shelley Moore Capito (R)",
+     "ticker": "ZTS",
+     "side": "SELL",
+     "range": "$1K–$15K",
+     "dates": "Traded Oct 21 · Disclosed Nov 5",
+     "cue": "Zoetis"
+    }
+   ]
+  },
+  {
+   "type": "outro",
+   "say": "Quick reminder: filings can lag up to forty five days, and amounts are ranges. This isn't evidence of wrongdoing, or financial advice. Which trade surprised you most? Tell me in the comments, and subscribe for a new Congress trade every weekday.",
+   "notes": [
+    "Disclosures can lag trades by up to 45 days",
+    "Amounts are reported as ranges",
+    "Not evidence of wrongdoing · Not financial advice"
+   ],
+   "cta": "SUBSCRIBE FOR DAILY CONGRESS TRADES",
+   "cta_cue": "subscribe",
+   "credits": "Trades: Tip Ranks (STOCK Act filings)  ·  Prices: Robinhood (official closes)"
+  }
+ ],
+ "post": {
+  "title": "A congresswoman's Nvidia buy is down 11% since",
+  "description": "Rep. Maria Elvira Salazar's STOCK Act filing shows three trades on Oct 23: an Nvidia (NVDA) buy, a Cisco (CSCO) sale and a Procter & Gamble (PG) buy, each $1K–$15K.\n\nOct 23 · NVDA · BUY · $1K–$15K\nOct 23 · CSCO · SELL · $1K–$15K\nOct 23 · PG · BUY · $1K–$15K\n\nDisclosed Nov 5.\n\nSince then (Oct 23 close → Nov 6 close): Nvidia −11.5%, Cisco −11.9%, Procter & Gamble +2.7%. Nvidia fell 9.3% in one day on Nov 5.\n\nAlso disclosed this week:\nSen. Shelley Moore Capito · Oct 21 · SELL · Apple, Microsoft, Meta, Zoetis · $1K–$15K each (disclosed Nov 5)\nRep. Daniel Meuser · Sep 25 · SELL · Nvidia · $1K–$15K (disclosed Nov 5)\n\nWhich trade surprised you most? Tell me in the comments.\nSubscribe for a new Congress trade every weekday.\n\nSource: STOCK Act filings via Tip Ranks; prices via Robinhood (official closes). Amounts are disclosed ranges. Narrated with an AI voice. Not financial advice and not an allegation of wrongdoing.",
+  "hashtags": [
+   "#congresstrades",
+   "#stocks",
+   "#stockmarket",
+   "#nvidia",
+   "#salazar"
+  ]
+ }
+}
