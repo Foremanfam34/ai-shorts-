@@ -1,0 +1,296 @@
+{
+ "id": "2026-11-10-khanna-mrvl",
+ "format": "spotlight",
+ "series": "CONGRESS TRADES",
+ "badge": "SPOTLIGHT",
+ "week_label": "Nov 10, 2026",
+ "source_line": "Source: STOCK Act disclosures via Tip Ranks",
+ "voice": "am_michael",
+ "speed": 1.1,
+ "say_as": {},
+ "natural": true,
+ "voice_fx": true,
+ "music": "groove",
+ "pause_scale": 0.8,
+ "scenes": [
+  {
+   "type": "hook",
+   "say": "Ro Khanna's filings show Marvell buys in October... and since the first of them, Marvell is down forty two percent.",
+   "line1": "KHANNA'S FILINGS: MARVELL BUYS",
+   "big_text": "-42.5%",
+   "big_color": "red",
+   "line2": "MARVELL SINCE THE OCT 13 BUY",
+   "pill": "OCT 13 & OCT 21 · $1K–$15K EACH",
+   "pill_color": "yellow",
+   "pill_cue": "October"
+  },
+  {
+   "type": "trades",
+   "say": "His filings list Marvell shares bought on October thirteenth and October twenty first, each for one thousand to fifteen thousand dollars. Both were disclosed November ninth.",
+   "who": "REP. RO KHANNA (D)",
+   "sub": "Marvell buys  ·  Disclosed Nov 9",
+   "rows": [
+    {
+     "ticker": "MRVL",
+     "name": "Oct 13 · Shares",
+     "side": "BUY",
+     "range": "$1K–$15K"
+    },
+    {
+     "ticker": "MRVL",
+     "name": "Oct 21 · Shares",
+     "side": "BUY",
+     "range": "$1K–$15K"
+    }
+   ]
+  },
+  {
+   "type": "chart",
+   "say": "Here's Marvell since September. It peaked in early October, and both of those buys came after that. Then, in six trading days, it lost almost forty seven percent... including a sixteen percent drop on November fifth alone. Since the later buy, it's down almost thirty seven percent.",
+   "who": "MARVELL (MRVL)",
+   "sub": "Daily close, Sep 1 → Nov 9",
+   "markers": [
+    {
+     "date": "2026-10-13",
+     "label": "OCT 13 BUY"
+    },
+    {
+     "date": "2026-10-21",
+     "label": "OCT 21 BUY",
+     "below": true
+    }
+   ],
+   "drop": {
+    "date": "2026-11-05",
+    "label": "-16.4% ON NOV 5",
+    "cue": "drop"
+   },
+   "stat": {
+    "value": "-36.8%",
+    "label": "since the Oct 21 close",
+    "cue": "later"
+   },
+   "series": [
+    [
+     "2026-09-01",
+     210.39
+    ],
+    [
+     "2026-09-02",
+     206.48
+    ],
+    [
+     "2026-09-03",
+     208.83
+    ],
+    [
+     "2026-09-04",
+     223.55
+    ],
+    [
+     "2026-09-08",
+     225.41
+    ],
+    [
+     "2026-09-09",
+     235.01
+    ],
+    [
+     "2026-09-10",
+     226.96
+    ],
+    [
+     "2026-09-11",
+     236.1
+    ],
+    [
+     "2026-09-14",
+     218.82
+    ],
+    [
+     "2026-09-15",
+     221.7
+    ],
+    [
+     "2026-09-16",
+     229.71
+    ],
+    [
+     "2026-09-17",
+     240.76
+    ],
+    [
+     "2026-09-18",
+     244.25
+    ],
+    [
+     "2026-09-21",
+     257.38
+    ],
+    [
+     "2026-09-22",
+     262.36
+    ],
+    [
+     "2026-09-23",
+     260.9
+    ],
+    [
+     "2026-09-24",
+     258.95
+    ],
+    [
+     "2026-09-25",
+     261.935
+    ],
+    [
+     "2026-09-28",
+     251.9
+    ],
+    [
+     "2026-09-29",
+     263.27
+    ],
+    [
+     "2026-09-30",
+     264.21
+    ],
+    [
+     "2026-10-01",
+     268.08
+    ],
+    [
+     "2026-10-02",
+     272.29
+    ],
+    [
+     "2026-10-05",
+     271.25
+    ],
+    [
+     "2026-10-06",
+     287.01
+    ],
+    [
+     "2026-10-07",
+     284.68
+    ],
+    [
+     "2026-10-08",
+     274.66
+    ],
+    [
+     "2026-10-09",
+     275.28
+    ],
+    [
+     "2026-10-12",
+     265.86
+    ],
+    [
+     "2026-10-13",
+     268.725
+    ],
+    [
+     "2026-10-14",
+     245.28
+    ],
+    [
+     "2026-10-15",
+     241.24
+    ],
+    [
+     "2026-10-16",
+     227.83
+    ],
+    [
+     "2026-10-19",
+     237.09
+    ],
+    [
+     "2026-10-20",
+     240.42
+    ],
+    [
+     "2026-10-21",
+     244.76
+    ],
+    [
+     "2026-10-22",
+     223.47
+    ],
+    [
+     "2026-10-23",
+     228.51
+    ],
+    [
+     "2026-10-26",
+     233.78
+    ],
+    [
+     "2026-10-27",
+     243.57
+    ],
+    [
+     "2026-10-28",
+     251.65
+    ],
+    [
+     "2026-10-29",
+     218.34
+    ],
+    [
+     "2026-10-30",
+     196.4
+    ],
+    [
+     "2026-11-02",
+     171.41
+    ],
+    [
+     "2026-11-03",
+     171.97
+    ],
+    [
+     "2026-11-04",
+     159.8
+    ],
+    [
+     "2026-11-05",
+     133.55
+    ],
+    [
+     "2026-11-06",
+     141.2
+    ],
+    [
+     "2026-11-09",
+     154.6
+    ]
+   ]
+  },
+  {
+   "type": "outro",
+   "say": "So, are those shares still held? We don't know. Filings can lag up to forty five days, and they can include a spouse's trades. This isn't evidence of wrongdoing, and it isn't financial advice. Would you have bought more, or sold? Tell me in the comments, and subscribe for a new one every weekday.",
+   "notes": [
+    "Filings can include a spouse's or child's trades",
+    "Positions may have changed · Filings lag up to 45 days",
+    "Not financial advice · Not evidence of wrongdoing"
+   ],
+   "cta": "SUBSCRIBE FOR DAILY CONGRESS TRADES",
+   "cta_cue": "subscribe",
+   "credits": "Trades: Tip Ranks (STOCK Act filings)  ·  Prices: Robinhood"
+  }
+ ],
+ "post": {
+  "title": "Ro Khanna's filings show Marvell buys. Down 42% since",
+  "description": "Rep. Ro Khanna's STOCK Act filings show buys of Marvell Technology (MRVL) shares on Oct 13 and Oct 21, each $1K–$15K. Since the Oct 13 buy, Marvell is down 42.5%.\n\nOct 13 · Shares · BUY · $1K–$15K\nOct 21 · Shares · BUY · $1K–$15K\n\nDisclosed Nov 9.\n\nMarvell since then, using closing prices: down 42.5% from the Oct 13 close and 36.8% from the Oct 21 close, to $154.60 on Nov 9. From the Oct 28 close to the Nov 5 close it fell 46.9% in six trading days, including 16.4% on Nov 5 alone.\n\nHis earlier filings also show a Marvell buy on Aug 7 and a sale on Sep 11, each $1K–$15K.\n\nWould you have bought more, or sold? Tell me in the comments.\nSubscribe for a new Congress trade every weekday.\n\nSource: STOCK Act filings via Tip Ranks; prices via Robinhood (official closes). Amounts are disclosed ranges. Filings can include a spouse's or dependent child's trades, and positions may have changed since. Narrated with an AI voice. Not financial advice and not an allegation of wrongdoing.",
+  "hashtags": [
+   "#congresstrades",
+   "#stocks",
+   "#stockmarket",
+   "#khanna",
+   "#marvell"
+  ]
+ }
+}

@@ -12,3 +12,5 @@ One line per trade: politician · ticker · trade date · side · range → epis
 - Rep. Maria Elvira Salazar · NVDA (BUY), CSCO (SELL), PG (BUY) · Oct 23 · $1K–$15K each → 2026-11-09 weekly
 - Sen. Shelley Moore Capito · AAPL, MSFT, META, ZTS · Oct 21 · SELL · $1K–$15K each → 2026-11-09 weekly
 - Rep. Daniel Meuser · NVDA · Sep 25 · SELL · $1K–$15K → 2026-11-09 weekly (description only)
+- Rep. Ro Khanna · MRVL · Oct 13, Oct 21 · BUY (two trades, $1K–$15K each) → 2026-11-10-khanna-mrvl
+- Rep. Ro Khanna · MRVL · Aug 7 (BUY), Sep 11 (SELL) · $1K–$15K each → 2026-11-10-khanna-mrvl (description only)
