@@ -1,0 +1,308 @@
+{
+ "id": "movers-2026-11-09",
+ "slug": "market-movers-2026-11-09",
+ "format": "movers",
+ "series": "MARKET MOVERS",
+ "badge": "DAILY",
+ "week_label": "Nov 9, 2026",
+ "source_line": "Data: Robinhood (prices and earnings)",
+ "voice": "am_michael",
+ "speed": 1.1,
+ "pause_scale": 0.8,
+ "natural": true,
+ "voice_fx": true,
+ "music": "groove",
+ "say_as": {
+  "Ubiquiti": "You bick wuh tee"
+ },
+ "post": {
+  "title": "AMD Erased Its Entire 17% Crash in Two Days 📈",
+  "description": "AMD jumped 13.3% on Monday, Nov 9, and closed 4.1% above Wednesday's close, erasing Thursday's 17.3% drop in two trading days.\n\nMonday's big movers:\n📈 Coherent (COHR) +16.8%\n📈 Monolithic Power Systems (MPWR) +16.6%\n📈 Ubiquiti (UI) +15.7%, after +15.3% on Friday\n📈 Constellation Energy (CEG) +10.5%, after beating earnings (EPS $5.06 vs $3.89 expected)\n📉 Nvidia (NVDA) −4.3%\n📉 First Solar (FSLR) −4.7%\n\nThursday's chip crash, as of Monday's close (vs Wednesday's close):\n📈 AMD +4.1%\n📉 Micron (MU) −7.8%\n📉 Nvidia (NVDA) −10.7%\n📉 Sandisk (SNDK) −14.5%\n\nS&P 500 (SPY): +2.4% · Nasdaq 100 (QQQ): +3.5% · Dow (DIA): +2.2%\n\nWhich move surprised you most? Tell me in the comments.\nSubscribe for the market's biggest moves every trading day.\n\nMoves use official closing prices. Data: Robinhood. Narrated with an AI voice. Not financial advice.",
+  "hashtags": [
+   "#stocks",
+   "#stockmarket",
+   "#earnings",
+   "#amd",
+   "#investing"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "hook",
+   "say": "AMD jumped thirteen percent on Monday... and erased its entire crash from Thursday.",
+   "line1": "AMD · NOV 9",
+   "big_text": "+13.3%",
+   "big_color": "green",
+   "line2": "ERASED THURSDAY'S 17.3% DROP",
+   "pill": "NASDAQ 100 +3.5% · S&P 500 +2.4%",
+   "pill_color": "green",
+   "pill_cue": "Monday"
+  },
+  {
+   "type": "bars",
+   "say": "Coherent and Monolithic Power each jumped almost seventeen percent, and Ubiquiti almost sixteen, after fifteen on Friday. Constellation Energy rose more than ten after beating earnings. But Nvidia fell four percent, and First Solar almost five.",
+   "title": "BIG MOVES · NOV 9",
+   "sub": "Nov 9 vs Nov 6 close  ·  companies worth $15B+",
+   "rows": [
+    {
+     "ticker": "COHR",
+     "from": 192.81,
+     "to": 225.19,
+     "cue": "Coherent"
+    },
+    {
+     "ticker": "MPWR",
+     "from": 1190.44,
+     "to": 1388.05,
+     "cue": "Monolithic"
+    },
+    {
+     "ticker": "UI",
+     "from": 592.84,
+     "to": 685.68,
+     "cue": "Ubiquiti"
+    },
+    {
+     "ticker": "CEG",
+     "from": 249.95,
+     "to": 276.09,
+     "cue": "Constellation"
+    },
+    {
+     "ticker": "NVDA",
+     "from": 186.64,
+     "to": 178.67,
+     "cue": "Nvidia"
+    },
+    {
+     "ticker": "FSLR",
+     "from": 201.14,
+     "to": 191.61,
+     "cue": "First"
+    }
+   ]
+  },
+  {
+   "type": "chart",
+   "say": "Here's the round trip. Down seventeen percent on Thursday, up eleven on Friday, then thirteen more on Monday... leaving AMD four percent above Wednesday's close.",
+   "who": "AMD",
+   "sub": "Daily close, Sep 21 → Nov 9",
+   "series": [
+    [
+     "2026-09-21",
+     615.52
+    ],
+    [
+     "2026-09-22",
+     623.77
+    ],
+    [
+     "2026-09-23",
+     614.61
+    ],
+    [
+     "2026-09-24",
+     629.26
+    ],
+    [
+     "2026-09-25",
+     630.63
+    ],
+    [
+     "2026-09-28",
+     607.87
+    ],
+    [
+     "2026-09-29",
+     607.57
+    ],
+    [
+     "2026-09-30",
+     611.76
+    ],
+    [
+     "2026-10-01",
+     615.73
+    ],
+    [
+     "2026-10-02",
+     633.91
+    ],
+    [
+     "2026-10-05",
+     631.75
+    ],
+    [
+     "2026-10-06",
+     649.42
+    ],
+    [
+     "2026-10-07",
+     645.86
+    ],
+    [
+     "2026-10-08",
+     620.68
+    ],
+    [
+     "2026-10-09",
+     608.1
+    ],
+    [
+     "2026-10-12",
+     594.24
+    ],
+    [
+     "2026-10-13",
+     605.53
+    ],
+    [
+     "2026-10-14",
+     570.82
+    ],
+    [
+     "2026-10-15",
+     562.23
+    ],
+    [
+     "2026-10-16",
+     528.75
+    ],
+    [
+     "2026-10-19",
+     538.05
+    ],
+    [
+     "2026-10-20",
+     534.74
+    ],
+    [
+     "2026-10-21",
+     552.72
+    ],
+    [
+     "2026-10-22",
+     507.93
+    ],
+    [
+     "2026-10-23",
+     516.79
+    ],
+    [
+     "2026-10-26",
+     531.28
+    ],
+    [
+     "2026-10-27",
+     560.26
+    ],
+    [
+     "2026-10-28",
+     578.44
+    ],
+    [
+     "2026-10-29",
+     566.42
+    ],
+    [
+     "2026-10-30",
+     504.8
+    ],
+    [
+     "2026-11-02",
+     466.84
+    ],
+    [
+     "2026-11-03",
+     483.9
+    ],
+    [
+     "2026-11-04",
+     488.78
+    ],
+    [
+     "2026-11-05",
+     404.4
+    ],
+    [
+     "2026-11-06",
+     449.04
+    ],
+    [
+     "2026-11-09",
+     508.58
+    ]
+   ],
+   "markers": [
+    {
+     "date": "2026-11-05",
+     "label": "NOV 5: -17.3%",
+     "below": true
+    }
+   ],
+   "drop": {
+    "date": "2026-11-09",
+    "label": "+13.3% ON NOV 9",
+    "cue": "Monday"
+   },
+   "stat": {
+    "value": "+4.1%",
+    "label": "vs Wednesday's close",
+    "cue": "above"
+   }
+  },
+  {
+   "type": "list",
+   "say": "But the rest of Thursday's crash isn't erased. Micron is still almost eight percent below Wednesday's close, Nvidia almost eleven, and Sandisk more than fourteen.",
+   "title": "THU CRASH → MON RALLY",
+   "rows": [
+    {
+     "who": "Micron",
+     "ticker": "MU",
+     "side": "DOWN",
+     "range": "−7.8%",
+     "dates": "Since Wed · Thu −17.5% · Fri +5.1% · Mon +6.3%",
+     "cue": "Micron"
+    },
+    {
+     "who": "Nvidia",
+     "ticker": "NVDA",
+     "side": "DOWN",
+     "range": "−10.7%",
+     "dates": "Since Wed · Thu −9.3% · Fri +2.8% · Mon −4.3%",
+     "cue": "Nvidia"
+    },
+    {
+     "who": "Sandisk",
+     "ticker": "SNDK",
+     "side": "DOWN",
+     "range": "−14.5%",
+     "dates": "Since Wed · Thu −22.3% · Fri +3.6% · Mon +6.2%",
+     "cue": "Sandisk"
+    }
+   ]
+  },
+  {
+   "type": "outro",
+   "say": "One-day moves don't predict the next day, and this isn't financial advice. Which move surprised you most? Subscribe for the biggest moves, every trading day.",
+   "notes": [
+    "Moves use official closing prices",
+    "One-day moves don't predict the next day",
+    "Not financial advice"
+   ],
+   "cta": "SUBSCRIBE FOR DAILY MARKET MOVERS",
+   "cta_cue": "Subscribe",
+   "credits": "Prices and earnings: Robinhood  ·  S&P 500 via SPY, Nasdaq 100 via QQQ  ·  Nov 9, 2026"
+  }
+ ],
+ "caption_fix": [
+  [
+   "S and P500",
+   "S&P 500"
+  ],
+  [
+   "S and P 500",
+   "S&P 500"
+  ]
+ ]
+}
