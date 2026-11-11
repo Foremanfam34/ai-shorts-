@@ -14,7 +14,7 @@ Every weekday morning, make one Stock Geek Congress Short and leave it in the da
 **No lookup is a complete or clean record.** Check every trade two ways before it goes in a video.
 - **By name:** returns the 25 most recently disclosed trades. `has_more: true` means the rest are cut off, and there's no way to page.
 - **By stock:** every politician's trades in one ticker. It can leave trades out. It also takes a name (`politician_name` plus `equity_symbol`), which reaches trades past the first 25.
-- **Duplicates:** the by-name list can show one trade twice, dated one day apart. Pelosi's Intel and Bloom Energy buys each appeared on two consecutive days, and the first versions of those videos counted both. Two rows with the same stock, side, type and range on consecutive days are one trade until the filing says otherwise.
+- **Duplicates:** the by-name list can show one trade twice, dated one day apart. Pelosi's Intel and Bloom Energy buys each appeared on two consecutive days, and the first versions of those videos counted both. Two rows with the same stock, side, type and range on consecutive days are one trade until the filing says otherwise. So are identical rows on the same day: Rulli's one Alphabet sale was listed four times, and the first Nov 3 weekly added three of them.
 - **Dates:** a weekend date can't be right. Treat that trade as unverified.
 
 Names that trade often:
@@ -50,6 +50,7 @@ Also check who traded these, then look those people up by name: NVDA, AAPL, MSFT
 - Look each trade up by name, and by name plus stock. Use the date, side, shares or options, and range only where the two agree.
 - If they disagree, or one shows the trade twice a day apart, settle it with the filing. The House and Senate filing sites are blocked in this session, so search the web for coverage that quotes the filing (dates, share counts, ranges). If you can't settle it, leave the trade out.
 - **Count trades or give a total only when you've settled the full list** for that stock. Otherwise name the dated trades and give no count.
+- **No settled trade, no video.** If nothing can be checked that day, send the owner one line saying so. Don't fill the slot with a trade you couldn't check.
 - **Trade-day price:** the close on the transaction date, from `get_equity_historicals` (day bars). Skip interpolated bars.
 - **Latest price:** `close.price` from `get_equity_quotes`. Its `close.date` must be the last session. Recompute every % yourself.
 - **Reasons:** only from `get_earnings_results` (report date, EPS vs estimate). Otherwise give no reason.

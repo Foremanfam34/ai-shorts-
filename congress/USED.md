@@ -3,7 +3,7 @@
 One line per trade: politician · ticker · trade date · side · range → episode. The daily run never features these again.
 
 - Rep. Pete Sessions · AAPL, MSFT, AMZN, GOOGL, NVDA, TSLA · Oct 2 · SELL (six trades) → 2026-11-03 weekly
-- Rep. Michael A. Rulli · GOOGL · Oct 16 · SELL · up to $300K → 2026-11-03 weekly
+- Rep. Michael A. Rulli · Alphabet (GOOG) · Oct 16 · SELL · $50K–$100K (one trade) → 2026-11-03 weekly (corrected Nov 11: the first version counted it three times, up to $300K)
 - Sen. Sheldon Whitehouse · MSFT · Oct 15 · SELL · $1K–$15K → 2026-11-03 weekly
 - Rep. Cleo Fields · NVDA · Oct 1 · BUY · $1K–$15K → 2026-11-03 weekly
 - Rep. John McGuire · AVGO · Sep 24 · SELL · $1K–$15K → 2026-11-03 weekly
