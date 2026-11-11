@@ -3,7 +3,7 @@
  "format": "spotlight",
  "series": "CONGRESS TRADES",
  "badge": "SPOTLIGHT",
- "week_label": "Nov 6, 2026",
+ "week_label": "Nov 11, 2026",
  "source_line": "Source: STOCK Act disclosures via Tip Ranks",
  "voice": "am_michael",
  "speed": 1.1,
@@ -15,31 +15,20 @@
  "scenes": [
   {
    "type": "hook",
-   "say": "Nancy Pelosi's filings show up to twenty four million dollars of Bloom Energy buys... and on Thursday, Bloom fell sixteen percent. In one day.",
+   "say": "Nancy Pelosi's filings show up to twelve million dollars of Bloom Energy buys. Bloom then jumped sixty percent... and gave it all back.",
    "line1": "PELOSI'S FILINGS SHOW",
-   "big_text": "$6M–$24M",
+   "big_text": "$3M–$12M",
    "line2": "OF BLOOM ENERGY BUYS",
-   "pill": "NOV 5: -16.4% IN ONE DAY",
-   "pill_cue": "fell"
+   "pill": "+60% BY OCT 6, THEN BACK TO FLAT",
+   "pill_cue": "jumped",
+   "pill_color": "yellow"
   },
   {
    "type": "trades",
-   "say": "Her filings list shares and options on four days in late July, all disclosed August twenty fourth.",
+   "say": "Her filings list shares and options on two days in late July, all disclosed August twenty fourth.",
    "who": "REP. NANCY PELOSI (D)",
-   "sub": "8 buys  ·  Disclosed Aug 24",
+   "sub": "4 buys  ·  Disclosed Aug 24",
    "rows": [
-    {
-     "ticker": "BE",
-     "name": "Jul 23 · Shares",
-     "side": "BUY",
-     "range": "$1M–$5M"
-    },
-    {
-     "ticker": "BE",
-     "name": "Jul 23 · Options",
-     "side": "BUY",
-     "range": "$1M–$5M"
-    },
     {
      "ticker": "BE",
      "name": "Jul 24 · Shares",
@@ -51,18 +40,6 @@
      "name": "Jul 24 · Options",
      "side": "BUY",
      "range": "$1M–$5M"
-    },
-    {
-     "ticker": "BE",
-     "name": "Jul 27 · Shares",
-     "side": "BUY",
-     "range": "$500K–$1M"
-    },
-    {
-     "ticker": "BE",
-     "name": "Jul 27 · Options",
-     "side": "BUY",
-     "range": "$500K–$1M"
     },
     {
      "ticker": "BE",
@@ -80,12 +57,12 @@
   },
   {
    "type": "chart",
-   "say": "Now look at Bloom since then. It ran as high as two hundred ninety six dollars in October... then it slid, and on Thursday it plunged. It's now forty three percent below that October high.",
+   "say": "Now look at Bloom since those buys. By October sixth, it was up sixty percent. Then it slid... including a sixteen percent plunge on November fifth. As of Tuesday's close, it's back within one percent of where it started.",
    "who": "BLOOM ENERGY (BE)",
-   "sub": "Daily close, Jul 15 → Nov 5",
+   "sub": "Daily close, Jul 15 → Nov 10",
    "markers": [
     {
-     "date": "2026-07-23",
+     "date": "2026-07-24",
      "label": "JULY BUYS"
     },
     {
@@ -96,12 +73,12 @@
    "drop": {
     "date": "2026-11-05",
     "label": "-16.4% ON NOV 5",
-    "cue": "plunged"
+    "cue": "plunge"
    },
    "stat": {
-    "value": "-43.4%",
-    "label": "below its Oct 6 close",
-    "cue": "below"
+    "value": "+0.3%",
+    "label": "vs the Jul 24 close",
+    "cue": "back"
    },
    "series": [
     [
@@ -427,15 +404,27 @@
     [
      "2026-11-05",
      167.52
+    ],
+    [
+     "2026-11-06",
+     173.24
+    ],
+    [
+     "2026-11-09",
+     193.88
+    ],
+    [
+     "2026-11-10",
+     185.42
     ]
    ]
   },
   {
    "type": "outro",
-   "say": "So, does she still hold it? We don't actually know. Filings can lag up to forty five days, this isn't evidence of wrongdoing, and it isn't financial advice. Would you have held? Tell me in the comments, and subscribe for a new one every weekday.",
+   "say": "So, does she still hold it? We don't actually know. Filings can lag up to forty five days, and they can include a spouse's trades. This isn't evidence of wrongdoing, and it isn't financial advice. Would you have held? Tell me in the comments, and subscribe for a new one every weekday.",
    "notes": [
-    "Positions may have changed since these filings",
-    "Disclosures can lag trades by up to 45 days",
+    "Filings can include a spouse's or child's trades",
+    "Positions may have changed · Filings lag up to 45 days",
     "Not financial advice · Not evidence of wrongdoing"
    ],
    "cta": "SUBSCRIBE FOR DAILY CONGRESS TRADES",
@@ -444,8 +433,8 @@
   }
  ],
  "post": {
-  "title": "Pelosi's Bloom Energy buys vs. Bloom's 16% one-day drop",
-  "description": "Rep. Nancy Pelosi's STOCK Act filings show eight Bloom Energy (BE) buys in late July, worth $6M–$24M in total.\n\nJul 23 · Shares · BUY · $1M–$5M\nJul 23 · Options · BUY · $1M–$5M\nJul 24 · Shares · BUY · $1M–$5M\nJul 24 · Options · BUY · $1M–$5M\nJul 27 · Shares · BUY · $500K–$1M\nJul 27 · Options · BUY · $500K–$1M\nJul 28 · Shares · BUY · $500K–$1M\nJul 28 · Options · BUY · $500K–$1M\n\nDisclosed Aug 24.\n\nSince then, Bloom's highest close was $295.78 on Oct 6. On Thursday, Nov 5, it fell 16.4% to close at $167.52, 43.4% below that Oct 6 close.\n\nWould you have held? Tell me in the comments.\nSubscribe for a new Congress trade every weekday.\n\nSource: STOCK Act filings via Tip Ranks; prices via Robinhood. Amounts are disclosed ranges. Narrated with an AI voice. Not financial advice and not an allegation of wrongdoing.",
+  "title": "Pelosi's Bloom Energy buys: up 60%, then all the way back",
+  "description": "Rep. Nancy Pelosi's STOCK Act filings show four Bloom Energy (BE) buys in late July, worth $3M–$12M in total. Bloom then rose 60% and gave it all back.\n\nJul 24 · Shares · BUY · $1M–$5M\nJul 24 · Options · BUY · $1M–$5M\nJul 28 · Shares · BUY · $500K–$1M\nJul 28 · Options · BUY · $500K–$1M\n\nDisclosed Aug 24.\n\nBloom closed at $184.89 on Jul 24 and reached $295.78 on Oct 6, up 60.0%. It fell 16.4% in one day on Nov 5. Its Nov 10 close of $185.42 is 0.3% above the Jul 24 close and 11.1% above the Jul 28 close.\n\nWould you have held? Tell me in the comments.\nSubscribe for a new Congress trade every weekday.\n\nSource: STOCK Act filings via Tip Ranks; prices via Robinhood (official closes). Amounts are disclosed ranges. Filings can include a spouse's or dependent child's trades, and positions may have changed since. Narrated with an AI voice. Not financial advice and not an allegation of wrongdoing.",
   "hashtags": [
    "#congresstrades",
    "#stocks",
@@ -453,5 +442,7 @@
    "#pelosi",
    "#bloomenergy"
   ]
- }
+ },
+ "corrected": "2026-11-11",
+ "correction_note": "The Nov version counted each trade twice (Tip Ranks lists each one again a day earlier)."
 }

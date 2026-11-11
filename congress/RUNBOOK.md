@@ -11,7 +11,11 @@ Every weekday morning, make one Stock Geek Congress Short and leave it in the da
 - Read **Leads** at the bottom of this file. Use the oldest lead first, then delete it.
 
 ## 1. Find candidates (Robinhood `get_politician_trades`)
-**Search by name.** The name lookup lists a politician's trades completely. The ticker lookup returns only one page of all politicians' trades, so use it to discover names, not as the record.
+**No lookup is a complete or clean record.** Check every trade two ways before it goes in a video.
+- **By name:** returns the 25 most recently disclosed trades. `has_more: true` means the rest are cut off, and there's no way to page.
+- **By stock:** every politician's trades in one ticker. It can leave trades out. It also takes a name (`politician_name` plus `equity_symbol`), which reaches trades past the first 25.
+- **Duplicates:** the by-name list can show one trade twice, dated one day apart. Pelosi's Intel and Bloom Energy buys each appeared on two consecutive days, and the first versions of those videos counted both. Two rows with the same stock, side, type and range on consecutive days are one trade until the filing says otherwise.
+- **Dates:** a weekend date can't be right. Treat that trade as unverified.
 
 Names that trade often:
 - Nancy Pelosi
@@ -43,7 +47,9 @@ Also check who traded these, then look those people up by name: NVDA, AAPL, MSFT
 4. Disclosed recently. A trade disclosed in the last 14 days beats an older one.
 
 ## 2. Verify
-- Take each trade exactly as the name lookup lists it: date, buy or sell, shares or options, range. If anything disagrees between lookups, leave that trade out.
+- Look each trade up by name, and by name plus stock. Use the date, side, shares or options, and range only where the two agree.
+- If they disagree, or one shows the trade twice a day apart, settle it with the filing. The House and Senate filing sites are blocked in this session, so search the web for coverage that quotes the filing (dates, share counts, ranges). If you can't settle it, leave the trade out.
+- **Count trades or give a total only when you've settled the full list** for that stock. Otherwise name the dated trades and give no count.
 - **Trade-day price:** the close on the transaction date, from `get_equity_historicals` (day bars). Skip interpolated bars.
 - **Latest price:** `close.price` from `get_equity_quotes`. Its `close.date` must be the last session. Recompute every % yourself.
 - **Reasons:** only from `get_earnings_results` (report date, EPS vs estimate). Otherwise give no reason.
