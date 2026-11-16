@@ -214,7 +214,10 @@ def ticker_badge(d, x, cy, ticker, a, w=96, h=72, size=24):
 
 
 def side_color(side):
-    return GREEN if side.upper() in ("BUY", "UP") else RED
+    s = side.upper()
+    if s in ("BUY", "UP", "BEAT"):
+        return GREEN
+    return YELLOW if s in ("DUE", "NEXT") else RED  # DUE/NEXT: an upcoming report, neither good nor bad
 
 
 def draw_trades(img, d, sc, t, dur):
