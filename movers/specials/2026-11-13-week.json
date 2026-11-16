@@ -1,0 +1,323 @@
+{
+ "id": "movers-2026-11-13-week",
+ "slug": "market-week-2026-11-13",
+ "format": "movers",
+ "series": "MARKET MOVERS",
+ "badge": "WEEKLY",
+ "week_label": "Nov 9–13, 2026",
+ "source_line": "Data: Robinhood (prices and earnings)",
+ "voice": "am_michael",
+ "speed": 1.1,
+ "pause_scale": 0.8,
+ "natural": true,
+ "voice_fx": true,
+ "music": "groove",
+ "say_as": {},
+ "post": {
+  "title": "Nvidia Fell 13% Last Week While AMD Jumped 19% 📉",
+  "description": "Nvidia (NVDA) fell 12.7% in the week of Nov 9–13 while AMD rose 18.9%. Nvidia's Friday close of $162.85 was its lowest in more than eight months, 31.9% below its Oct 6 close.\n\nThe week's big movers (Nov 13 close vs Nov 6 close):\n📈 Cerebras Systems (CBRS) +21.2%\n📈 AMD +18.9%\n📈 Broadcom (AVGO) +18.2%\n📉 Moderna (MRNA) −12.1%\n📉 Nvidia (NVDA) −12.7%\n📉 Alibaba (BABA) −13.8%\n\nSince the chip crash on Nov 5 (vs the Nov 4 close):\n📈 AMD +9.3%\n📉 Micron (MU) −2.1%\n📉 Nvidia (NVDA) −18.6%\n\nS&P 500 (SPY): +2.6% · Nasdaq 100 (QQQ): +3.6% · Dow (DIA): +2.1%\n\nNvidia reports earnings on Tuesday, Nov 17, after the close.\n\nAMD or Nvidia: which would you pick? Tell me in the comments.\nSubscribe for the market's biggest moves every trading day.\n\nMoves use official closing prices. Data: Robinhood. Narrated with an AI voice. Not financial advice.",
+  "hashtags": [
+   "#stocks",
+   "#stockmarket",
+   "#nvidia",
+   "#amd",
+   "#investing"
+  ]
+ },
+ "scenes": [
+  {
+   "type": "hook",
+   "say": "Nvidia fell almost thirteen percent last week... while AMD rose almost nineteen.",
+   "line1": "NVIDIA · WEEK OF NOV 9",
+   "big_text": "-12.7%",
+   "big_color": "red",
+   "line2": "WHILE AMD ROSE 18.9%",
+   "pill": "NASDAQ 100 +3.6% · S&P 500 +2.6%",
+   "pill_color": "green",
+   "pill_cue": "week"
+  },
+  {
+   "type": "bars",
+   "say": "Cerebras jumped twenty one percent, AMD almost nineteen, and Broadcom eighteen. But Moderna fell twelve, Nvidia almost thirteen, and Alibaba almost fourteen.",
+   "title": "BIG MOVES · NOV 9–13",
+   "sub": "Nov 13 close vs Nov 6 close  ·  companies worth $25B+",
+   "rows": [
+    {
+     "ticker": "CBRS",
+     "from": 89.68,
+     "to": 108.72,
+     "cue": "Cerebras"
+    },
+    {
+     "ticker": "AMD",
+     "from": 449.04,
+     "to": 534.06,
+     "cue": "AMD"
+    },
+    {
+     "ticker": "AVGO",
+     "from": 293.69,
+     "to": 347.01,
+     "cue": "Broadcom"
+    },
+    {
+     "ticker": "MRNA",
+     "from": 254.19,
+     "to": 223.37,
+     "cue": "Moderna"
+    },
+    {
+     "ticker": "NVDA",
+     "from": 186.64,
+     "to": 162.85,
+     "cue": "Nvidia"
+    },
+    {
+     "ticker": "BABA",
+     "from": 109.45,
+     "to": 94.38,
+     "cue": "Alibaba"
+    }
+   ]
+  },
+  {
+   "type": "chart",
+   "say": "Here's Nvidia since late September. It peaked on October sixth... and Friday's close was its lowest in more than eight months, thirty two percent below that peak.",
+   "who": "NVIDIA",
+   "sub": "Daily close, Sep 21 → Nov 13",
+   "series": [
+    [
+     "2026-09-21",
+     227.38
+    ],
+    [
+     "2026-09-22",
+     228.87
+    ],
+    [
+     "2026-09-23",
+     225.51
+    ],
+    [
+     "2026-09-24",
+     224.58
+    ],
+    [
+     "2026-09-25",
+     225.07
+    ],
+    [
+     "2026-09-28",
+     228.86
+    ],
+    [
+     "2026-09-29",
+     227.21
+    ],
+    [
+     "2026-09-30",
+     228.38
+    ],
+    [
+     "2026-10-01",
+     230.86
+    ],
+    [
+     "2026-10-02",
+     233.95
+    ],
+    [
+     "2026-10-05",
+     238.9
+    ],
+    [
+     "2026-10-06",
+     239.24
+    ],
+    [
+     "2026-10-07",
+     237.47
+    ],
+    [
+     "2026-10-08",
+     230.48
+    ],
+    [
+     "2026-10-09",
+     229.28
+    ],
+    [
+     "2026-10-12",
+     226.32
+    ],
+    [
+     "2026-10-13",
+     228.52
+    ],
+    [
+     "2026-10-14",
+     221.3
+    ],
+    [
+     "2026-10-15",
+     217.23
+    ],
+    [
+     "2026-10-16",
+     214.13
+    ],
+    [
+     "2026-10-19",
+     217.09
+    ],
+    [
+     "2026-10-20",
+     216.47
+    ],
+    [
+     "2026-10-21",
+     221.97
+    ],
+    [
+     "2026-10-22",
+     212.21
+    ],
+    [
+     "2026-10-23",
+     210.96
+    ],
+    [
+     "2026-10-26",
+     216.0
+    ],
+    [
+     "2026-10-27",
+     217.94
+    ],
+    [
+     "2026-10-28",
+     215.38
+    ],
+    [
+     "2026-10-29",
+     213.66
+    ],
+    [
+     "2026-10-30",
+     204.64
+    ],
+    [
+     "2026-11-02",
+     202.06
+    ],
+    [
+     "2026-11-03",
+     206.69
+    ],
+    [
+     "2026-11-04",
+     200.13
+    ],
+    [
+     "2026-11-05",
+     181.6
+    ],
+    [
+     "2026-11-06",
+     186.64
+    ],
+    [
+     "2026-11-09",
+     178.67
+    ],
+    [
+     "2026-11-10",
+     168.89
+    ],
+    [
+     "2026-11-11",
+     173.73
+    ],
+    [
+     "2026-11-12",
+     166.19
+    ],
+    [
+     "2026-11-13",
+     162.85
+    ]
+   ],
+   "markers": [
+    {
+     "date": "2026-10-06",
+     "label": "OCT 6 HIGH",
+     "cue": "peaked"
+    },
+    {
+     "date": "2026-11-13",
+     "label": "8-MONTH LOW",
+     "below": true,
+     "cue": "lowest"
+    }
+   ],
+   "stat": {
+    "value": "-31.9%",
+    "label": "below its Oct 6 close",
+    "cue": "below"
+   }
+  },
+  {
+   "type": "list",
+   "say": "And since the chip crash on November fifth? AMD is nine percent above where it started. Micron is two percent below... and Nvidia is almost nineteen percent below.",
+   "title": "SINCE THE NOV 5 CRASH",
+   "rows": [
+    {
+     "who": "AMD",
+     "ticker": "AMD",
+     "side": "UP",
+     "range": "+9.3%",
+     "dates": "vs Nov 4 close · last week +18.9%",
+     "cue": "AMD"
+    },
+    {
+     "who": "Micron",
+     "ticker": "MU",
+     "side": "DOWN",
+     "range": "−2.1%",
+     "dates": "vs Nov 4 close · last week +12.8%",
+     "cue": "Micron"
+    },
+    {
+     "who": "Nvidia",
+     "ticker": "NVDA",
+     "side": "DOWN",
+     "range": "−18.6%",
+     "dates": "vs Nov 4 close · last week −12.7%",
+     "cue": "Nvidia"
+    }
+   ]
+  },
+  {
+   "type": "outro",
+   "say": "Nvidia reports earnings on Tuesday, after the close. One week doesn't predict the next, and this isn't financial advice. AMD or Nvidia: which would you pick? Subscribe for the biggest moves, every trading day.",
+   "notes": [
+    "Moves use official closing prices",
+    "Nvidia reports earnings Tue, Nov 17, after the close",
+    "Not financial advice"
+   ],
+   "cta": "SUBSCRIBE FOR DAILY MARKET MOVERS",
+   "cta_cue": "Subscribe",
+   "credits": "Prices and earnings: Robinhood  ·  S&P 500 via SPY, Nasdaq 100 via QQQ  ·  Nov 9–13, 2026"
+  }
+ ],
+ "caption_fix": [
+  [
+   "S and P500",
+   "S&P 500"
+  ],
+  [
+   "S and P 500",
+   "S&P 500"
+  ]
+ ]
+}
