@@ -8,14 +8,15 @@ Every weekday morning, make one Stock Geek Congress Short and leave it in the da
 - Work in `/home/user/ai-shorts-` (the `Foremanfam34/ai-shorts-` repo) and run `git pull`.
 - If `models/` is missing, run `./setup.sh`.
 - Read `congress/USED.md`, the trades already featured. **Never feature one of them again.**
-- Read **Leads** at the bottom of this file. Use the oldest lead first, then delete it.
+- Read **Leads** at the bottom of this file. Use the oldest lead first, then delete it. A lead marked **needs confirming** stays until its trade date is confirmed against the filing or press coverage; skip it until then.
 
 ## 1. Find candidates (Robinhood `get_politician_trades`)
 **No lookup is a complete or clean record.** Check every trade two ways before it goes in a video.
 - **By name:** returns the 25 most recently disclosed trades. `has_more: true` means the rest are cut off, and there's no way to page.
 - **By stock:** every politician's trades in one ticker. It can leave trades out. It also takes a name (`politician_name` plus `equity_symbol`), which reaches trades past the first 25.
 - **Duplicates:** the by-name list can show one trade twice, dated one day apart. Pelosi's Intel and Bloom Energy buys each appeared on two consecutive days, and the first versions of those videos counted both. Two rows with the same stock, side, type and range on consecutive days are one trade until the filing says otherwise. So are identical rows on the same day: Rulli's one Alphabet sale was listed four times, and the first Nov 3 weekly added three of them.
-- **Dates:** a weekend date can't be right. Treat that trade as unverified.
+- **Dates:** a weekend date can't be right. Treat that trade as unverified. A weekday date can also be one day early: Tip Ranks dates a David Taylor sale Jun 4 where press coverage of the filing says Jun 5. A Friday trade date in the same filing is a good sign the dates aren't shifted. If a story depends on the exact day, confirm the day outside the data first.
+- **Disclosure dates** are Tip Ranks' dates and can change by a day after the fact (Capito's went from Nov 5 to Nov 4). Press coverage sometimes gives an earlier filing date.
 
 Names that trade often:
 - Nancy Pelosi
@@ -101,4 +102,9 @@ The dashboard is https://claude.ai/artifact/PkXcf4fxhp49R6wgKxe8mH.
 - Send the owner the MP4 with a one-line summary. Add the YouTube title and the full description (hashtags at the end), each in its own code block, then "Ready for you to post. It's in the dashboard."
 
 ## Leads
-None right now. To add one, write `- **<date>: <who> × <company> (<ticker>).**` and follow it with the trades, the closes and any caution.
+To add one, write `- **<date>: <who> × <company> (<ticker>).**` and follow it with the trades, the closes and any caution.
+
+- **Nov 16: Rep. David Taylor (R) × Broadcom (AVGO) and Lam Research (LRCX). Needs confirming.** Tip Ranks dates both buys Nov 5, the day chip stocks crashed ($1K–$15K each, disclosed Nov 13). Both lookups agree and show no duplicates. The same filing lists Home Depot and Procter & Gamble sales that day, and Alphabet, AT&T and Eaton buys on Nov 3.
+  - Caution: the story depends on the exact day, and Taylor's dates have been a day early before (see Dates above). No press coverage of this filing yet as of Nov 16. Confirm Nov 5 against the filing or coverage before using it.
+  - Closes: AVGO Nov 4 $325.48, Nov 5 $291.53, Nov 6 $293.69, Nov 13 $347.01. LRCX Nov 4 $221.43, Nov 5 $185.20, Nov 6 $200.44, Nov 13 $225.92.
+  - Say gains are measured from the closing price, not his actual price. Broadcom traded between $290.12 and $314.00 on Nov 5.
